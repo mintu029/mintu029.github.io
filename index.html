@@ -1,0 +1,139 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- The font which I choose is Courier -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- I chose to create a website based on the theme of a music video because it combines visual storytelling, rhythm, and emotion—all powerful tools to engage an audience. Music videos allow for creative expression through sound, imagery, and editing, making them an ideal subject for designing an interactive and immersive website. The goal is to reflect the energy and mood of the music video through layout, visuals, and user interaction. By doing this, I hope to create a space where users don’t just watch the video, but feel and experience it in a more dynamic and personal way. -->
+    <header>
+      <h1>MUSIC VIDEO</h1>
+    </header>
+
+    <!-- I was going to add more navigation buttons but I found it didn't work for my site so I just kept the homepage.-->
+    <nav>
+       <ul>
+        <li><a href="#">Home</a></li>
+  
+        <!-- I just keep the Home item for navigation items -->
+      </ul> 
+    </nav>
+
+    <!-- I decided to add the necessary buttons such as volume up, volume down, fast forward and rewind. The reason is that I found these functions really important to help users control the content more flexibly during the website experience. Adding these buttons helps improve usability, while creating a more professional and friendly feel for the viewer. -->
+    <main class="container">
+      <!-- All buttons have been listed in the code section -->
+      <div class="media-player">
+        <video id="custom-video-player" controls>
+          <source
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+            type="video/mp4"
+          />
+        </video>
+        
+        <div class="custom-controls">
+            <button id="low-volume" onclick="decreaseVolume()" aria-label="Decrease Volume">
+                <img
+                  id="low-volume-image"
+                  src="https://img.icons8.com/?size=100&id=91634&format=png&color=000000"
+                  alt="Decrease volume"
+                  width="24"
+                  height="24"
+                />
+              </button>
+          
+              <button id="rewind-video" onclick="toggleForwardVideo(-15)">
+                <img
+                  id="rewind-video-image"
+                  src="https://img.icons8.com/?size=100&id=91480&format=png&color=000000"
+                  alt="rewind-button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+          <button id="play-pause-btn" onclick="togglePlayPause()">
+            <img
+              id="play-pause-img"
+              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+              alt="Play Button"
+              width="24"
+              height="24"
+            />
+            <button id="forward-video" onclick="toggleForwardVideo(15)">
+                <img
+                  id="forward-video-image"
+                  src="https://img.icons8.com/?size=100&id=91476&format=png&color=000000"
+                  alt="Forward-button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+          <button id="grow-volume" onclick="increaseVolume()" aria-label="Increase Volume">
+            <img
+              id="grow-volume-image"
+              src="https://img.icons8.com/?size=100&id=59734&format=png&color=000000"
+              alt="Increase volume"
+              width="24"
+              height="24"
+            />
+          </button>
+          <!-- add the missing buttons or functionality here -->
+        </div>
+      </div>
+      <div class="progress-bar">
+        <input type="range" id="timeline" value="0" class="seek-bar" />
+    <span class="current-time">00:00</span> 
+    <span class="music-time">00:00</span>     
+</div>
+      <!-- These videos are my assignments in Digital Video course. I used them because they are all abstract music videos. They have similar visuals to the main video, and the content is similar. -->
+      <section>
+        <h2>RELATIVE VIDEOS</h2>
+        <video id="hi" controls>
+            <iframe src="https://archive.org/embed/timeline-1_202505" 
+            width="560"
+            height="384"
+            frameborder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowfullscreen
+           ></iframe>
+              </video>
+          </video>
+          <video id="hi" controls>
+            <iframe
+            src="https://archive.org/embed/le_minh_tu_s4001977_a1"
+            width="560"
+            height="384"
+            frameborder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowfullscreen
+          ></iframe>
+          </video>
+        <p>These videos relate with the main video</p>
+        <!-- Add more content as needed -->
+      </section>
+    </main>
+    
+    <!-- I have added more reference about icons which I used -->
+    <footer>
+      <p>&copy; 2025 Music Video Website. All rights reserved.</p>
+      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/59734/audio">Increase Volume</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/91634/low-volume">Decrease Volume</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/91476/fast-forward">Fast Forward Video</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/91480/rewind">Rewind Video</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+    </footer>
+  </body>
+</html>
+
