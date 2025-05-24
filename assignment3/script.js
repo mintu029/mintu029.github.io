@@ -31,6 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollContainer.addEventListener("scroll", checkVisibility);
   checkVisibility(); // Initial check
 
+  // Toggle description visibility on card click
+  const toggleCards = document.querySelectorAll(".toggle-card");
+  toggleCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const description = card.querySelector(".artwork-description");
+      description.classList.toggle("show");
+    });
+  });
+
   // Particle animation
   const particleContainer = document.querySelector(".particle-container");
   for (let i = 0; i < 50; i++) {
