@@ -7,17 +7,7 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-.background-blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://images.unsplash.com/photo-1618005198919-d3d4b5a5a609?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
-    no-repeat center center/cover;
-  filter: blur(10px);
-  z-index: -2;
-}
+
 .particle-container {
   position: fixed;
   width: 100%;
@@ -27,16 +17,13 @@ body {
   pointer-events: none;
   z-index: -1;
 }
-.background-blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://images.unsplash.com/photo-1618005198919-d3d4b5a5a609?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
-    no-repeat center center/cover;
-  filter: blur(10px);
-  z-index: -2;
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding-bottom: 20px;
 }
 
 header {
@@ -65,18 +52,6 @@ header {
   text-transform: uppercase;
 }
 
-h2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
-h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
 nav {
   display: flex;
   gap: 20px;
@@ -93,6 +68,31 @@ nav a:hover {
   color: #ccc;
   text-decoration: underline;
 }
+
+h2 h3 {
+  font-weight: bold;
+  text-align: center;
+  margin: 40px 0;
+  color: #2e3a59;
+  text-shadow: 1px 1px 5px rgba(46, 58, 89, 0.3);
+}
+
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 28px;
+}
+
+h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 28px;
+}
+
 .section-title {
   font-size: 36px;
   font-weight: bold;
@@ -101,9 +101,11 @@ nav a:hover {
   color: #2e3a59;
   text-shadow: 1px 1px 5px rgba(46, 58, 89, 0.3);
 }
+
 .toggle-card {
   cursor: pointer;
 }
+
 .artworks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -117,70 +119,28 @@ nav a:hover {
   text-align: center;
   perspective: 1000px;
 }
-.artwork-placeholder {
-  display: flex;
-  gap: 15px;
-}
-.artwork-description {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  margin-top: 10px;
-}
-.artwork-description.show {
-  max-height: 100px; /* Adjust based on content height */
-  opacity: 1;
-}
-.artwork-description p {
-  font-size: 14px;
-  color: #333;
-  line-height: 1.5;
-  margin: 0;
-}
-.project-description p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-}
-.project-description h2 {
-  font-size: 28px;
-  color: #2e3a59;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.project-description {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
+
 .artwork-placeholder {
   width: 100%;
   height: 300px;
   background-color: #000;
   border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   transform-style: preserve-3d;
 }
+
 .artworks-grid:hover .artwork-placeholder {
-  filter: blur(10px);
+  filter: blur(5px);
 }
+
 .artworks-grid .artwork-placeholder:hover {
   filter: none;
   box-shadow: 0 0 20px rgba(46, 58, 89, 0.7);
   transform: scale(0.8);
 }
-.artwork-placeholder:hover {
-  transform: scale(0.8);
-}
+
 .artwork-info {
   margin-top: 10px;
 }
@@ -197,7 +157,49 @@ nav a:hover {
 .artwork-date {
   font-size: 14px;
   margin: 5px 0;
-  color: #666;
+  color: #eeeeee;
+}
+
+.artwork-description {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  margin-top: 10px;
+}
+
+.artwork-description.show {
+  max-height: 100px;
+  opacity: 1;
+}
+
+.artwork-description p {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.project-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-description h2 {
+  font-size: 28px;
+  color: #2e3a59;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.project-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
 }
 
 .more-button {
@@ -205,6 +207,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .more-button a {
@@ -216,7 +219,7 @@ nav a:hover {
   gap: 5px;
   padding: 5px 15px;
   border-radius: 20px;
-  background: rgba(123, 107, 107, 0.2);
+  background: rgba(130, 114, 114, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -229,6 +232,7 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
+
 .footer {
   background-color: #1a2b46;
   color: #fff;
@@ -346,7 +350,6 @@ nav a:hover {
   }
 }
 
-/* Updated scroll container styles */
 .scroll-container {
   width: 80%;
   height: 700px;
@@ -357,6 +360,7 @@ nav a:hover {
   background-image: linear-gradient(147deg, #2e3a59 0%, #1a2b46 74%);
   border-radius: 50px;
   box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   scroll-behavior: smooth;
@@ -381,5 +385,28 @@ nav a:hover {
   }
   100% {
     background-image: linear-gradient(147deg, #1a2b46 0%, #2e3a59 74%);
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: floatParticle 10s infinite linear;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
 }
