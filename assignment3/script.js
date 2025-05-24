@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Existing scroll-to-bottom functionality for "More" buttons
+  // Scroll-to-bottom functionality for "More" buttons
   const moreLinks = document.querySelectorAll(".more-link");
   moreLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -15,40 +15,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".animate-on-scroll");
   const scrollContainer = document.querySelector(".scroll-container");
 
-  const checkVisibility = () => {
-    const containerRect = scrollContainer.getBoundingClientRect();
-    cards.forEach((card) => {
-      const cardRect = card.getBoundingClientRect();
-      const isVisible =
-        cardRect.top >= containerRect.top &&
-        cardRect.bottom <= containerRect.bottom;
-      if (isVisible) {
-        card.classList.add("visible");
-      }
-    });
-  };
+  if (scrollContainer && cards.length > 0) {
+    const checkVisibility = () => {
+      const containerRect = scrollContainer.getBoundingClientRect();
+      cards.forEach((card) => {
+        const cardRect = card.getBoundingClientRect();
+        const isVisible =
+          cardRect.top >= containerRect.top &&
+          cardRect.top <= containerRect.bottom;
+        if (isVisible) {
+          card.classList.add("visible");
+        }
+      });
+    };
 
-  scrollContainer.addEventListener("scroll", checkVisibility);
-  checkVisibility(); // Initial check
+    scrollContainer.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Initial check
+  }
 
   // Toggle description visibility on card click
   const toggleCards = document.querySelectorAll(".toggle-card");
   toggleCards.forEach((card) => {
     card.addEventListener("click", () => {
       const description = card.querySelector(".artwork-description");
-      description.classList.toggle("show");
+      if (description) {
+        description.classList.toggle("show");
+      }
     });
   });
 
   // Particle animation
   const particleContainer = document.querySelector(".particle-container");
-  for (let i = 0; i < 50; i++) {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-    particle.style.left = `${Math.random() * 100}vw`;
-    particle.style.top = `${Math.random() * 100}vh`;
-    particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-    particle.style.animationDelay = `${Math.random() * 5}s`;
-    particleContainer.appendChild(particle);
+  if (particleContainer) {
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      particleContainer.appendChild(particle);
+    }
   }
 });
+
