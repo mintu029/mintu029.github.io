@@ -117,7 +117,7 @@ nav a:hover {
 .artworks-grid .artwork-placeholder:hover {
   filter: none;
   box-shadow: 0 0 20px rgba(46, 58, 89, 0.7);
-  transform: rotateY(10deg) scale(1.05);
+  transform: scale(0.8);
 }
 .artwork-placeholder:hover {
   transform: scale(0.8);
