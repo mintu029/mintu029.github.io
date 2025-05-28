@@ -4,144 +4,285 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minh Tu's Exhibition</title>
-    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="background-blur"></div>
     <div class="particle-container"></div>
- <div class="content-wrapper">
-    <header>
-      <div class="header-title">MINH TU'S EXHIBITION</div>
-      <nav>
-        <a href="#artworks">Artworks</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-    <h1 class="section-title">ABOUT ARTWORKS</h1>
-    <h2>SPECIAL</h2>
+    <div class="content-wrapper">
+      <header>
+        <div class="header-title">MINH TU'S EXHIBITION</div>
+        <nav>
+          <a href="#artworks">Artworks</a>
+          <a href="#" id="about-link">About</a>
+          <a href="#" id="contact-link">Contact</a>
+        </nav>
+        <button
+          id="theme-toggle"
+          aria-label="Toggle between light and dark theme"
+        >
+          <span class="theme-icon"></span>
+        </button>
+      </header>
 
-    <div class="artworks-grid">
-      <div class="artwork-card">
-        <div class="artwork-placeholder"></div>
-        <div class="artwork-info">
-          <p class="artwork-date">MONTH/DD, YEAR</p>
-          <h2 class="artwork-title">MINH</h2>
+      <!-- About Modal -->
+      <div id="about-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close-button">×</span>
+          <h2>About Minh Tu</h2>
+          <p>
+            Minh Tu is a contemporary artist known for blending traditional and
+            modern art forms to explore themes of identity, culture, and human
+            connection. With a background in fine arts and a passion for
+            innovation, Minh Tu's work has been exhibited globally, inviting
+            viewers to reflect on their own experiences through
+            thought-provoking visuals. This exhibition showcases a curated
+            selection of Minh Tu's most impactful pieces, created between 2020
+            and 2025.
+          </p>
+          <p>
+            For inquiries, collaborations, or to learn more about Minh Tu's
+            creative process, feel free to reach out via the contact section.
+          </p>
         </div>
       </div>
-      <div class="artwork-card">
-        <div class="artwork-placeholder"></div>
-        <div class="artwork-info">
-          <p class="artwork-date">MONTH/DD, YEAR</p>
-          <h2 class="artwork-title">TU</h2>
+      <!-- Contact Modal -->
+      <div id="contact-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-contact-modal" class="close-button">×</span>
+          <h2>Contact Minh Tu</h2>
+          <p>
+            For inquiries, collaborations, or to discuss Minh Tu's work, reach
+            out via email or social media.
+          </p>
+          <p>
+            Email:
+            <a href="mailto:contact@minhtu.art" class="contact-link"
+              >contact@minhtu.art</a
+            ><br />
+            Instagram:
+            <a
+              href="https://instagram.com/minhtu029"
+              target="_blank"
+              class="contact-link"
+              >@minhtu.art</a
+            ><br />
+            Twitter:
+            <a
+              href="https://twitter.com/minhtu_art"
+              target="_blank"
+              class="contact-link"
+              >@minhtu_art</a
+            >
+          </p>
         </div>
       </div>
-    </div>
-   <div class="project-description">
-      <h2>Project Description</h2>
-      <p>Minh Tu's Exhibition is a celebration of contemporary art, showcasing a collection of innovative and thought-provoking works. This project aims to bridge the gap between traditional and modern art forms, exploring themes of identity, culture, and human connection through a variety of mediums. Each piece in the exhibition invites viewers to engage with the artist's vision and reflect on their own experiences.</p>
-   </div>
+      <h1 class="section-title">ABOUT ARTWORKS</h1>
 
-    <div class="more-button">
-      <a href="#more" class="more-link">MORE</a>
-    </div>
-    <h3>OTHER</h3>
-    <div class="scroll-container">
+      <h2>SPECIAL</h2>
       <div class="artworks-grid">
-        <div class="artwork-card animate-on-scroll toggle-card">
+        <div class="artwork-card toggle-card">
           <div class="artwork-placeholder"></div>
           <div class="artwork-info">
             <p class="artwork-date">MONTH/DD, YEAR</p>
+            <h3 class="artwork-title">MINH</h3>
             <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
+              <p>
+                This piece explores the intersection of light and shadow, using
+                minimalist forms to evoke a sense of calm and introspection.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
+        <div class="artwork-card toggle-card">
           <div class="artwork-placeholder"></div>
           <div class="artwork-info">
             <p class="artwork-date">MONTH/DD, YEAR</p>
+            <h3 class="artwork-title">TU</h3>
             <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
-          </div>
-          </div>
-        </div>
-        <div class="artwork-card animate-on-scroll toggle-card">
-          <div class="artwork-placeholder"></div>
-          <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
-            <div class="artwork-description">
-              <p>This piece explores the intersection of light and shadow, using minimalist forms to evoke a sense of calm and introspection.</p>
+              <p>
+                Inspired by urban landscapes, this artwork captures the vibrancy
+                and chaos of city life through bold colors and dynamic shapes.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div class="more-button">
+        <a href="#more" class="more-link">MORE</a>
+      </div>
 
-    <div class="footer">
-      <div class="footer-art">
-        <h2 class="footer-title">
-          <span>M</span><span>I</span><span>N</span><span>H</span>
-          <span class="spacer"></span>
-          <span>T</span><span>U</span>
-        </h2>
-        <div class="footer-shapes">
-          <div class="shape shape-circle"></div>
-          <div class="shape shape-line"></div>
-          <div class="shape shape-circle"></div>
-        </div>
-        <p class="footer-text">
-          © 2025 Minh Tu's Exhibition. All rights reserved.
+      <div class="project-description">
+        <h2>Project Description</h2>
+        <p>
+          Minh Tu's Exhibition is a celebration of contemporary art, showcasing
+          a collection of innovative and thought-provoking works. This project
+          aims to bridge the gap between traditional and modern art forms,
+          exploring themes of identity, culture, and human connection through a
+          variety of mediums. Each piece in the exhibition invites viewers to
+          engage with the artist's vision and reflect on their own experiences.
         </p>
       </div>
+
+      <h3>OTHERS</h3>
+      <div class="scroll-container">
+        <div class="artworks-grid">
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  This piece explores the intersection of light and shadow,
+                  using minimalist forms to evoke a sense of calm and
+                  introspection.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="artwork-card animate-on-scroll toggle-card">
+            <div class="artwork-placeholder"></div>
+            <div class="artwork-info">
+              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <div class="artwork-description">
+                <p>
+                  Inspired by urban landscapes, this artwork captures the
+                  vibrancy and chaos of city life through bold colors and
+                  dynamic shapes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-art">
+          <h2 class="footer-title">
+            <span>M</span><span>I</span><span>N</span><span>H</span>
+            <span class="spacer"></span>
+            <span>T</span><span>U</span>
+          </h2>
+          <div class="footer-shapes">
+            <div class="shape shape-circle"></div>
+            <div class="shape shape-line"></div>
+            <div class="shape shape-circle"></div>
+          </div>
+          <p class="footer-text">
+            © 2025 Minh Tu's Exhibition. All rights reserved.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+
     <script src="script.js"></script>
   </body>
 </html>
