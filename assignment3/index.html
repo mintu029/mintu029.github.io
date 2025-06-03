@@ -50,6 +50,7 @@
           </p>
         </div>
       </div>
+
       <!-- Contact Modal -->
       <div id="contact-modal" class="modal">
         <div class="modal-content">
@@ -81,14 +82,35 @@
           </p>
         </div>
       </div>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="modal">
+        <div class="modal-content gallery-modal-content">
+          <span id="close-gallery-modal" class="close-button">×</span>
+          <div class="gallery-container">
+            <button id="gallery-prev" class="gallery-nav-button">←</button>
+            <div class="gallery-image-wrapper">
+              <img id="gallery-image" src="" alt="Gallery Image" />
+              <div id="gallery-info" class="gallery-info"></div>
+            </div>
+            <button id="gallery-next" class="gallery-nav-button">→</button>
+          </div>
+        </div>
+      </div>
+
       <h1 class="section-title">ABOUT ARTWORKS</h1>
 
       <h2>SPECIAL</h2>
       <div class="artworks-grid">
-        <div class="artwork-card toggle-card">
-          <div class="artwork-placeholder"></div>
+        <div class="artwork-card toggle-card" data-collection-id="minh-collection">
+          <img
+            src="DSC09009.png"
+            alt="Tác phẩm Minh"
+            class="artwork-image"
+            loading="lazy"
+          />
           <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
+            <p class="artwork-date">06 October 2024</p>
             <h3 class="artwork-title">MINH</h3>
             <div class="artwork-description">
               <p>
@@ -98,10 +120,15 @@
             </div>
           </div>
         </div>
-        <div class="artwork-card toggle-card">
-          <div class="artwork-placeholder"></div>
+        <div class="artwork-card toggle-card" data-collection-id="tu-collection">
+          <img
+            src="assets/images/tu1.jpg"
+            alt="Tác phẩm Tu"
+            class="artwork-image"
+            loading="lazy"
+          />
           <div class="artwork-info">
-            <p class="artwork-date">MONTH/DD, YEAR</p>
+            <p class="artwork-date">07/15, 2024</p>
             <h3 class="artwork-title">TU</h3>
             <div class="artwork-description">
               <p>
@@ -131,10 +158,15 @@
       <h3>OTHERS</h3>
       <div class="scroll-container">
         <div class="artworks-grid">
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork1-collection">
+            <img
+              src="assets/images/artwork1_1.jpg"
+              alt="Tác phẩm 1"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/01, 2024</p>
               <div class="artwork-description">
                 <p>
                   This piece explores the intersection of light and shadow,
@@ -144,10 +176,15 @@
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork2-collection">
+            <img
+              src="assets/images/artwork2_1.jpg"
+              alt="Tác phẩm 2"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/02, 2024</p>
               <div class="artwork-description">
                 <p>
                   Inspired by urban landscapes, this artwork captures the
@@ -157,106 +194,134 @@
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork3-collection">
+            <img
+              src="assets/images/artwork3_1.jpg"
+              alt="Tác phẩm 3"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/03, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  A reflection on nature’s resilience, using fluid forms and
+                  earthy tones to convey harmony.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <!-- Repeat for remaining artworks (up to 10) -->
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork4-collection">
+            <img
+              src="assets/images/artwork4_1.jpg"
+              alt="Tác phẩm 4"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/04, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  An exploration of human connection through abstract forms and
+                  vibrant hues.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork5-collection">
+            <img
+              src="assets/images/artwork5_1.jpg"
+              alt="Tác phẩm 5"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/05, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  Capturing the essence of solitude with minimalist lines and
+                  muted colors.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork6-collection">
+            <img
+              src="assets/images/artwork6_1.jpg"
+              alt="Tác phẩm 6"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/06, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  A vibrant depiction of cultural fusion through bold patterns.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork7-collection">
+            <img
+              src="assets/images/artwork7_1.jpg"
+              alt="Tác phẩm 7"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/07, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  Reflecting the chaos of modern life with dynamic compositions.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork8-collection">
+            <img
+              src="assets/images/artwork8_1.jpg"
+              alt="Tác phẩm 8"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/08, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  An ode to tranquility using soft gradients and flowing shapes.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork9-collection">
+            <img
+              src="assets/images/artwork9_1.jpg"
+              alt="Tác phẩm 9"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/09, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  Exploring identity through fragmented forms and vivid colors.
                 </p>
               </div>
             </div>
           </div>
-          <div class="artwork-card animate-on-scroll toggle-card">
-            <div class="artwork-placeholder"></div>
+          <div class="artwork-card animate-on-scroll toggle-card" data-collection-id="artwork10-collection">
+            <img
+              src="assets/images/artwork10_1.jpg"
+              alt="Tác phẩm 10"
+              class="artwork-image"
+              loading="lazy"
+            />
             <div class="artwork-info">
-              <p class="artwork-date">MONTH/DD, YEAR</p>
+              <p class="artwork-date">08/10, 2024</p>
               <div class="artwork-description">
                 <p>
-                  Inspired by urban landscapes, this artwork captures the
-                  vibrancy and chaos of city life through bold colors and
-                  dynamic shapes.
+                  A meditation on time using layered textures and subtle tones.
                 </p>
               </div>
             </div>
