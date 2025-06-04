@@ -106,37 +106,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork2-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=17",
+        src: "20231012_131022000_iOS.jpg",
         alt: "Bold urban artwork",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=18",
+        src: "DSC06769.jpg",
         alt: "Colorful urban landscape",
         description: "Urban landscapes.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=19",
+        src: "DSC06847.jpg",
         alt: "Vibrant urban artwork",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=20",
+        src: "DSC06850.jpg",
         alt: "Bold urban piece",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=21",
+        src: "DSC07136.jpg",
         alt: "Urban colorful abstract",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=22",
+        src: "DSC07163.jpg",
         alt: "Dynamic urban artwork",
         description: "Bold colors.",
       },
