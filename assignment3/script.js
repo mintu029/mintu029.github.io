@@ -1,160 +1,309 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Collections data
+  // Collections data with standardized paths and types
   const collections = {
     "minh-collection": [
       {
-        src: "DSC09009.png",
-        alt: "Minh 1",
+        type: "image",
+        src: "dsc09009.png",
+        alt: "Drawing exploring light and shadow",
         description: "Light and shadow interplay.",
       },
-      { src: "DSC00251.jpg", alt: "Minh 2", description: "Minimalist calm." },
       {
-        src: "DSC00276.jpg",
-        alt: "Minh 3",
+        type: "image",
+        src: "dsc00251.jpg",
+        alt: "Minimalist calm artwork",
+        description: "Minimalist calm.",
+      },
+      {
+        type: "image",
+        src: "dsc00276.jpg",
+        alt: "Introspective minimalist artwork",
         description: "Introspective forms.",
       },
       {
-        src: "DSC00321.jpg",
-        alt: "Minh 4",
+        type: "image",
+        src: "dsc00321.jpg",
+        alt: "Serene abstract drawing",
         description: "Serene abstraction.",
       },
       {
-        src: "DSC08935.jpg",
-        alt: "Minh 4",
+        type: "image",
+        src: "dsc08935.jpg",
+        alt: "Serene abstract composition",
         description: "Serene abstraction.",
       },
       {
-        src: "DSC07983.jpg",
-        alt: "Minh 4",
+        type: "image",
+        src: "dsc07983.jpg",
+        alt: "Serene abstract piece",
         description: "Serene abstraction.",
       },
-      { src: "DSC07892.jpg", alt: "Minh 5", description: "Quiet motion." },
+      {
+        type: "image",
+        src: "dsc07892.jpg",
+        alt: "Drawing with quiet motion",
+        description: "Quiet motion.",
+      },
     ],
     "tu-collection": [
-      { src: "DSC5113.jpg", alt: "Tu 2", description: "City chaos." },
-      { src: "DSC5076.jpg", alt: "Tu 1", description: "Urban vibrancy." },
-      { src: "DSC5057.jpg", alt: "Tu 2", description: "City chaos." },
-      { src: "DSC5391.jpg", alt: "Tu 2", description: "City chaos." },
-      { src: "DSC5439.jpg", alt: "Tu 2", description: "City chaos." },
-      { src: "DSC5148.jpg", alt: "Tu 3", description: "Dynamic shapes." },
+      {
+        type: "image",
+        src: "dsc05113.jpg",
+        alt: "Urban chaos artwork",
+        description: "City chaos.",
+      },
+      {
+        type: "image",
+        src: "dsc05076.jpg",
+        alt: "Vibrant urban scene",
+        description: "Urban vibrancy.",
+      },
+      {
+        type: "image",
+        src: "dsc05057.jpg",
+        alt: "City-inspired chaotic artwork",
+        description: "City chaos.",
+      },
+      {
+        type: "image",
+        src: "dsc05391.jpg",
+        alt: "Urban chaotic composition",
+        description: "City chaos.",
+      },
+      {
+        type: "image",
+        src: "dsc05439.jpg",
+        alt: "City-themed abstract",
+        description: "City chaos.",
+      },
+      {
+        type: "image",
+        src: "dsc05148.jpg",
+        alt: "Dynamic urban artwork",
+        description: "Dynamic shapes.",
+      },
     ],
     "artwork1-collection": [
       {
-        src: "assets/images/artwork1_1.jpg",
-        alt: "Artwork 1-1",
+        type: "image",
+        src: "20230915_194433000_ios.jpg",
+        alt: "Light and shadow artwork",
         description: "Light and shadow.",
       },
       {
-        src: "assets/images/artwork1_2.jpg",
-        alt: "Artwork 1-2",
+        type: "image",
+        src: "20230915_200319000_ios.jpg",
+        alt: "Minimalist forms artwork",
+        description: "Minimalist forms.",
+      },
+      {
+        type: "image",
+        src: "20230916_034302000_ios.jpg",
+        alt: "Minimalist composition",
         description: "Minimalist forms.",
       },
     ],
     "artwork2-collection": [
       {
-        src: "assets/images/artwork2_1.jpg",
-        alt: "Artwork 2-1",
+        type: "image",
+        src: "20231012_131022000_ios.png",
+        alt: "Bold urban artwork",
+        description: "Bold colors.",
+      },
+      {
+        type: "image",
+        src: "dsc07038.png",
+        alt: "Colorful urban landscape",
         description: "Urban landscapes.",
       },
       {
-        src: "assets/images/artwork2_2.jpg",
-        alt: "Artwork 2-2",
+        type: "image",
+        src: "dsc07136.png",
+        alt: "Vibrant urban artwork",
+        description: "Bold colors.",
+      },
+      {
+        type: "image",
+        src: "dsc07163.png",
+        alt: "Bold urban piece",
+        description: "Bold colors.",
+      },
+      {
+        type: "image",
+        src: "dsc06769.png",
+        alt: "Urban colorful abstract",
+        description: "Bold colors.",
+      },
+      {
+        type: "image",
+        src: "dsc06704.png",
+        alt: "Dynamic urban artwork",
         description: "Bold colors.",
       },
     ],
     "artwork3-collection": [
       {
-        src: "assets/images/artwork3_1.jpg",
-        alt: "Artwork 3-1",
+        type: "image",
+        src: "dsc01148.png",
+        alt: "Nature-inspired artwork",
         description: "Nature’s resilience.",
       },
       {
-        src: "assets/images/artwork3_2.jpg",
-        alt: "Artwork 3-2",
+        type: "image",
+        src: "dsc07712.png",
+        alt: "Fluid nature artwork",
         description: "Fluid forms.",
+      },
+      {
+        type: "image",
+        src: "dsc07680.png",
+        alt: "Human connection artwork",
+        description: "Human connection.",
+      },
+      {
+        type: "image",
+        src: "dsc07629.png",
+        alt: "Abstract nature artwork",
+        description: "Abstract forms.",
+      },
+      {
+        type: "image",
+        src: "dsc07596.png",
+        alt: "Abstract nature composition",
+        description: "Abstract forms.",
       },
     ],
     "artwork4-collection": [
       {
-        src: "assets/images/artwork4_1.jpg",
-        alt: "Artwork 4-1",
+        type: "image",
+        src: "dsc03243-recovered.jpg",
+        alt: "Abstract human connection",
         description: "Human connection.",
       },
       {
-        src: "assets/images/artwork4_2.jpg",
-        alt: "Artwork 4-2",
+        type: "image",
+        src: "dsc03092.jpg",
+        alt: "Abstract vibrant forms",
+        description: "Abstract forms.",
+      },
+      {
+        type: "image",
+        src: "dsc03255.jpg",
+        alt: "Abstract colorful forms",
+        description: "Abstract forms.",
+      },
+      {
+        type: "image",
+        src: "dsc03065.jpg",
+        alt: "Abstract dynamic forms",
         description: "Abstract forms.",
       },
     ],
     "artwork5-collection": [
       {
-        src: "assets/images/artwork5_1.jpg",
-        alt: "Artwork 5-1",
+        type: "image",
+        src: "PET MAGAZINE_page-0001.jpg",
+        alt: "Minimalist solitude artwork",
         description: "Solitude essence.",
       },
       {
-        src: "assets/images/artwork5_2.jpg",
-        alt: "Artwork 5-2",
+        type: "image",
+        src: "PET MAGAZINE_page-0002.jpg",
+        alt: "Minimalist line artwork",
+        description: "Minimalist lines.",
+      },
+      {
+        type: "image",
+        src: "PET MAGAZINE_page-0003.jpg",
+        alt: "Minimalist line composition",
+        description: "Minimalist lines.",
+      },
+      {
+        type: "image",
+        src: "PET MAGAZINE_page-0004.jpg",
+        alt: "Minimalist abstract lines",
+        description: "Minimalist lines.",
+      },
+      {
+        type: "image",
+        src: "PET MAGAZINE_page-0005.jpg",
+        alt: "Minimalist line design",
+        description: "Minimalist lines.",
+      },
+      {
+        type: "image",
+        src: "PET MAGAZINE_page-0006.jpg",
+        alt: "Minimalist line art",
+        description: "Minimalist lines.",
+      },
+      {
+        type: "image",
+        src: "PET MAGAZINE_page-0007.jpg",
+        alt: "Minimalist line piece",
         description: "Minimalist lines.",
       },
     ],
     "artwork6-collection": [
       {
-        src: "assets/images/artwork6_1.jpg",
-        alt: "Artwork 6-1",
-        description: "Cultural fusion.",
-      },
-      {
-        src: "assets/images/artwork6_2.jpg",
-        alt: "Artwork 6-2",
-        description: "Bold patterns.",
+        type: "video",
+        src: "",
+        alt: "Video of shadow play",
+        description: "Shadow play.",
       },
     ],
     "artwork7-collection": [
       {
-        src: "assets/images/artwork7_1.jpg",
-        alt: "Artwork 7-1",
+        type: "video",
+        src: "https://youtu.be/hcSeyMMeoAg?si=Wu0gP2nuorBCSKGz",
+        alt: "Modern chaos artwork",
         description: "Modern chaos.",
       },
       {
+        type: "image",
         src: "assets/images/artwork7_2.jpg",
-        alt: "Artwork 7-2",
+        alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
       },
     ],
     "artwork8-collection": [
       {
+        type: "image",
         src: "assets/images/artwork8_1.jpg",
-        alt: "Artwork 8-1",
+        alt: "Tranquil ode artwork",
         description: "Tranquil ode.",
       },
       {
+        type: "image",
         src: "assets/images/artwork8_2.jpg",
-        alt: "Artwork 8-2",
+        alt: "Soft gradients artwork",
         description: "Soft gradients.",
       },
     ],
     "artwork9-collection": [
       {
+        type: "image",
         src: "assets/images/artwork9_1.jpg",
-        alt: "Artwork 9-1",
+        alt: "Identity fragments artwork",
         description: "Identity fragments.",
       },
       {
+        type: "image",
         src: "assets/images/artwork9_2.jpg",
-        alt: "Artwork 9-2",
+        alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
     ],
     "artwork10-collection": [
       {
+        type: "image",
         src: "assets/images/artwork10_1.jpg",
-        alt: "Artwork 10-1",
+        alt: "Time meditation artwork",
         description: "Time meditation.",
       },
       {
+        type: "image",
         src: "assets/images/artwork10_2.jpg",
-        alt: "Artwork 10-2",
+        alt: "Layered textures artwork",
         description: "Layered textures.",
       },
     ],
@@ -162,21 +311,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Scroll-to-bottom functionality for "More" buttons
   const moreLinks = document.querySelectorAll(".more-link");
-  moreLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth",
+  if (moreLinks.length) {
+    moreLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
       });
     });
-  });
+  }
 
   // Animation for artwork cards in scroll container
   const cards = document.querySelectorAll(".animate-on-scroll");
   const scrollContainer = document.querySelector(".scroll-container");
 
-  if (scrollContainer && cards.length > 0) {
+  if (scrollContainer && cards.length) {
     const checkVisibility = () => {
       const containerRect = scrollContainer.getBoundingClientRect();
       cards.forEach((card) => {
@@ -197,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Gallery and toggle functionality
   const toggleCards = document.querySelectorAll(".toggle-card");
   const galleryModal = document.getElementById("gallery-modal");
-  const galleryImage = document.getElementById("gallery-image");
+  const galleryMedia = document.getElementById("gallery-media");
   const galleryInfo = document.getElementById("gallery-info");
   const closeGalleryModal = document.getElementById("close-gallery-modal");
   const prevButton = document.getElementById("gallery-prev");
@@ -205,77 +356,112 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImages = [];
   let currentIndex = 0;
 
-  toggleCards.forEach((card) => {
-    card.addEventListener("click", (event) => {
-      // Prevent description toggle when clicking the image for gallery
-      if (event.target.classList.contains("artwork-image")) {
-        const collectionId = card.dataset.collectionId;
-        currentImages = collections[collectionId] || [];
-        currentIndex = 0;
+  // Function to render media (image or video)
+  const renderMedia = (media, title, date) => {
+    if (!galleryMedia) return;
+    galleryMedia.innerHTML = "";
+    let mediaElement;
 
-        if (currentImages.length > 0) {
-          const title = card.querySelector(".artwork-title")?.innerText || "";
-          const date = card.querySelector(".artwork-date")?.innerText || "";
-          const description =
-            card.querySelector(".artwork-description p")?.innerText ||
-            currentImages[0].description;
+    if (media.type === "image") {
+      mediaElement = document.createElement("img");
+      mediaElement.src = media.src;
+      mediaElement.alt = media.alt;
+      mediaElement.setAttribute("aria-label", media.description);
+    } else if (media.type === "video") {
+      mediaElement = document.createElement("video");
+      mediaElement.src = media.src;
+      mediaElement.alt = media.alt;
+      mediaElement.controls = true;
+      mediaElement.autoplay = true;
+      mediaElement.muted = true;
+      mediaElement.loop = true;
+      mediaElement.setAttribute("aria-label", media.description);
+    }
 
-          galleryImage.src = currentImages[0].src;
-          galleryImage.alt = currentImages[0].alt;
-          galleryInfo.innerHTML = `
-            <h3 class="artwork-title">${title}</h3>
-            <p class="artwork-date">${date}</p>
-            <div class="artwork-description"><p>${description}</p></div>
-          `;
+    if (mediaElement) {
+      galleryMedia.appendChild(mediaElement);
+    }
 
-          galleryModal.classList.add("show");
-          setTimeout(() => {
-            galleryModal.querySelector(".modal-content").classList.add("show");
-          }, 10);
+    if (galleryInfo) {
+      galleryInfo.innerHTML = `
+        <h3 class="artwork-title">${title}</h3>
+        <p class="artwork-date">${date}</p>
+        <div class="artwork-description"><p>${media.description}</p></div>
+      `;
+    }
+  };
+
+  // Pause any playing video
+  const pauseCurrentVideo = () => {
+    const currentVideo = galleryMedia?.querySelector("video");
+    if (currentVideo) {
+      currentVideo.pause();
+    }
+  };
+
+  if (toggleCards.length && galleryModal && galleryMedia && galleryInfo) {
+    toggleCards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target.classList.contains("artwork-image")) {
+          const collectionId = card.dataset.collectionId;
+          currentImages = collections[collectionId] || [];
+          currentIndex = 0;
+
+          if (currentImages.length > 0) {
+            const title = card.querySelector(".artwork-title")?.innerText || "";
+            const date = card.querySelector(".artwork-date")?.innerText || "";
+            renderMedia(currentImages[0], title, date);
+            galleryModal.classList.add("show");
+            setTimeout(() => {
+              galleryModal
+                .querySelector(".modal-content")
+                ?.classList.add("show");
+            }, 10);
+          }
+        } else {
+          const description = card.querySelector(".artwork-description");
+          if (description) {
+            description.classList.toggle("show");
+          }
         }
-      } else {
-        // Toggle description for non-image clicks
-        const description = card.querySelector(".artwork-description");
-        if (description) {
-          description.classList.toggle("show");
-        }
-      }
-    });
-  });
-
-  if (prevButton && nextButton) {
-    prevButton.addEventListener("click", () => {
-      currentIndex =
-        (currentIndex - 1 + currentImages.length) % currentImages.length;
-      galleryImage.src = currentImages[currentIndex].src;
-      galleryImage.alt = currentImages[currentIndex].alt;
-      galleryInfo.querySelector(".artwork-description p").innerText =
-        currentImages[currentIndex].description;
-    });
-
-    nextButton.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % currentImages.length;
-      galleryImage.src = currentImages[currentIndex].src;
-      galleryImage.alt = currentImages[currentIndex].alt;
-      galleryInfo.querySelector(".artwork-description p").innerText =
-        currentImages[currentIndex].description;
+      });
     });
   }
 
-  if (closeGalleryModal) {
-    closeGalleryModal.addEventListener("click", () => {
-      galleryModal.querySelector(".modal-content").classList.remove("show");
+  if (prevButton && nextButton) {
+    const switchMedia = (newIndex) => {
+      pauseCurrentVideo();
+      currentIndex = newIndex;
+      const title = document.querySelector(".artwork-title")?.innerText || "";
+      const date = document.querySelector(".artwork-date")?.innerText || "";
+      renderMedia(currentImages[currentIndex], title, date);
+    };
+
+    prevButton.addEventListener("click", () => {
+      switchMedia(
+        (currentIndex - 1 + currentImages.length) % currentImages.length
+      );
+    });
+
+    nextButton.addEventListener("click", () => {
+      switchMedia((currentIndex + 1) % currentImages.length);
+    });
+  }
+
+  if (closeGalleryModal && galleryModal) {
+    const closeModal = () => {
+      pauseCurrentVideo();
+      galleryModal.querySelector(".modal-content")?.classList.remove("show");
       setTimeout(() => {
         galleryModal.classList.remove("show");
       }, 500);
-    });
+    };
 
+    closeGalleryModal.addEventListener("click", closeModal);
     galleryModal.addEventListener("click", (event) => {
       if (event.target === galleryModal) {
-        galleryModal.querySelector(".modal-content").classList.remove("show");
-        setTimeout(() => {
-          galleryModal.classList.remove("show");
-        }, 500);
+        closeModal();
       }
     });
   }
@@ -283,29 +469,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
+    const elementsToToggle = [
+      document.body,
+      themeToggle,
+      document.querySelector(".content-wrapper"),
+      document.querySelector("header"),
+      document.querySelector(".footer"),
+      document.querySelector(".scroll-container"),
+      document.querySelector(".project-description"),
+    ].filter(Boolean);
+
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
-      document.body.classList.add("dark-mode");
-      themeToggle.classList.add("dark-mode");
-      document.querySelector(".content-wrapper").classList.add("dark-mode");
-      document.querySelector("header").classList.add("dark-mode");
-      document.querySelector(".footer").classList.add("dark-mode");
-      document.querySelector(".scroll-container").classList.add("dark-mode");
-      document.querySelector(".project-description").classList.add("dark-mode");
+      elementsToToggle.forEach((el) => el.classList.add("dark-mode"));
     }
 
     themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      themeToggle.classList.toggle("dark-mode");
-      document.querySelector(".content-wrapper").classList.toggle("dark-mode");
-      document.querySelector("header").classList.toggle("dark-mode");
-      document.querySelector(".footer").classList.toggle("dark-mode");
-      document.querySelector(".scroll-container").classList.toggle("dark-mode");
-      document
-        .querySelector(".project-description")
-        .classList.toggle("dark-mode");
+      elementsToToggle.forEach((el) => el.classList.toggle("dark-mode"));
     });
   }
 
@@ -313,30 +495,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const aboutLink = document.getElementById("about-link");
   const aboutModal = document.getElementById("about-modal");
   const closeModal = document.getElementById("close-modal");
-  const aboutModalContent = aboutModal.querySelector(".modal-content");
 
   if (aboutLink && aboutModal && closeModal) {
+    const aboutModalContent = aboutModal.querySelector(".modal-content");
+    const toggleAboutModal = (show) => {
+      if (show) {
+        aboutModal.classList.add("show");
+        setTimeout(() => aboutModalContent?.classList.add("show"), 10);
+      } else {
+        aboutModalContent?.classList.remove("show");
+        setTimeout(() => aboutModal.classList.remove("show"), 500);
+      }
+    };
+
     aboutLink.addEventListener("click", (event) => {
       event.preventDefault();
-      aboutModal.classList.add("show");
-      setTimeout(() => {
-        aboutModalContent.classList.add("show");
-      }, 10);
+      toggleAboutModal(true);
     });
 
-    closeModal.addEventListener("click", () => {
-      aboutModalContent.classList.remove("show");
-      setTimeout(() => {
-        aboutModal.classList.remove("show");
-      }, 500);
-    });
-
+    closeModal.addEventListener("click", () => toggleAboutModal(false));
     aboutModal.addEventListener("click", (event) => {
       if (event.target === aboutModal) {
-        aboutModalContent.classList.remove("show");
-        setTimeout(() => {
-          aboutModal.classList.remove("show");
-        }, 500);
+        toggleAboutModal(false);
       }
     });
   }
@@ -345,30 +525,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactLink = document.getElementById("contact-link");
   const contactModal = document.getElementById("contact-modal");
   const closeContactModal = document.getElementById("close-contact-modal");
-  const contactModalContent = contactModal.querySelector(".modal-content");
 
   if (contactLink && contactModal && closeContactModal) {
+    const contactModalContent = contactModal.querySelector(".modal-content");
+    const toggleContactModal = (show) => {
+      if (show) {
+        contactModal.classList.add("show");
+        setTimeout(() => contactModalContent?.classList.add("show"), 10);
+      } else {
+        contactModalContent?.classList.remove("show");
+        setTimeout(() => contactModal.classList.remove("show"), 500);
+      }
+    };
+
     contactLink.addEventListener("click", (event) => {
       event.preventDefault();
-      contactModal.classList.add("show");
-      setTimeout(() => {
-        contactModalContent.classList.add("show");
-      }, 10);
+      toggleContactModal(true);
     });
 
-    closeContactModal.addEventListener("click", () => {
-      contactModalContent.classList.remove("show");
-      setTimeout(() => {
-        contactModal.classList.remove("show");
-      }, 500);
-    });
-
+    closeContactModal.addEventListener("click", () =>
+      toggleContactModal(false)
+    );
     contactModal.addEventListener("click", (event) => {
       if (event.target === contactModal) {
-        contactModalContent.classList.remove("show");
-        setTimeout(() => {
-          contactModal.classList.remove("show");
-        }, 500);
+        toggleContactModal(false);
       }
     });
   }
