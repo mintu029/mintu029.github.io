@@ -176,25 +176,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork4-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=28",
+        src: "DSC03243-Recovered.jpg",
         alt: "Abstract human connection",
         description: "Human connection.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=29",
+        src: "DSC03255.jpg",
         alt: "Abstract vibrant forms",
         description: "Abstract forms.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=30",
+        src: "DSC03241-Recovered.jpg",
         alt: "Abstract colorful forms",
         description: "Abstract forms.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=31",
+        src: "DSC03092.jpg",
         alt: "Abstract dynamic forms",
         description: "Abstract forms.",
       },
