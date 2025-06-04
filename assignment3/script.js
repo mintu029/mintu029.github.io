@@ -136,6 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
     "artwork3-collection": [
+        {
+        type: "image",
+        src: "DSC01148.png",
+        alt: "Nature-inspired artwork",
+        description: "Nature’s resilience.",
+      },
       {
         type: "image",
         src: "DSC07596.png",
