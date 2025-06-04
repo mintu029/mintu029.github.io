@@ -1,46 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Collections data with standardized paths and types
+  // Collections data with external URLs
   const collections = {
     "minh-collection": [
       {
         type: "image",
-        src: "dsc09009.png",
+        src: "https://picsum.photos/400/300?random=1",
         alt: "Drawing exploring light and shadow",
         description: "Light and shadow interplay.",
       },
       {
         type: "image",
-        src: "dsc00251.jpg",
+        src: "https://picsum.photos/400/300?random=2",
         alt: "Minimalist calm artwork",
         description: "Minimalist calm.",
       },
       {
         type: "image",
-        src: "dsc00276.jpg",
+        src: "https://picsum.photos/400/300?random=3",
         alt: "Introspective minimalist artwork",
         description: "Introspective forms.",
       },
       {
         type: "image",
-        src: "dsc00321.jpg",
+        src: "https://picsum.photos/400/300?random=4",
         alt: "Serene abstract drawing",
         description: "Serene abstraction.",
       },
       {
         type: "image",
-        src: "dsc08935.jpg",
+        src: "https://picsum.photos/400/300?random=5",
         alt: "Serene abstract composition",
         description: "Serene abstraction.",
       },
       {
         type: "image",
-        src: "dsc07983.jpg",
+        src: "https://picsum.photos/400/300?random=6",
         alt: "Serene abstract piece",
         description: "Serene abstraction.",
       },
       {
         type: "image",
-        src: "dsc07892.jpg",
+        src: "https://picsum.photos/400/300?random=7",
         alt: "Drawing with quiet motion",
         description: "Quiet motion.",
       },
@@ -48,37 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "tu-collection": [
       {
         type: "image",
-        src: "dsc05113.jpg",
+        src: "https://picsum.photos/400/300?random=8",
         alt: "Urban chaos artwork",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "dsc05076.jpg",
+        src: "https://picsum.photos/400/300?random=9",
         alt: "Vibrant urban scene",
         description: "Urban vibrancy.",
       },
       {
         type: "image",
-        src: "dsc05057.jpg",
+        src: "https://picsum.photos/400/300?random=10",
         alt: "City-inspired chaotic artwork",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "dsc05391.jpg",
+        src: "https://picsum.photos/400/300?random=11",
         alt: "Urban chaotic composition",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "dsc05439.jpg",
+        src: "https://picsum.photos/400/300?random=12",
         alt: "City-themed abstract",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "dsc05148.jpg",
+        src: "https://picsum.photos/400/300?random=13",
         alt: "Dynamic urban artwork",
         description: "Dynamic shapes.",
       },
@@ -86,19 +86,19 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork1-collection": [
       {
         type: "image",
-        src: "20230915_194433000_ios.jpg",
+        src: "https://picsum.photos/400/300?random=14",
         alt: "Light and shadow artwork",
         description: "Light and shadow.",
       },
       {
         type: "image",
-        src: "20230915_200319000_ios.jpg",
+        src: "https://picsum.photos/400/300?random=15",
         alt: "Minimalist forms artwork",
         description: "Minimalist forms.",
       },
       {
         type: "image",
-        src: "20230916_034302000_ios.jpg",
+        src: "https://picsum.photos/400/300?random=16",
         alt: "Minimalist composition",
         description: "Minimalist forms.",
       },
@@ -106,37 +106,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork2-collection": [
       {
         type: "image",
-        src: "20231012_131022000_ios.png",
+        src: "https://picsum.photos/400/300?random=17",
         alt: "Bold urban artwork",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "dsc07038.png",
+        src: "https://picsum.photos/400/300?random=18",
         alt: "Colorful urban landscape",
         description: "Urban landscapes.",
       },
       {
         type: "image",
-        src: "dsc07136.png",
+        src: "https://picsum.photos/400/300?random=19",
         alt: "Vibrant urban artwork",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "dsc07163.png",
+        src: "https://picsum.photos/400/300?random=20",
         alt: "Bold urban piece",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "dsc06769.png",
+        src: "https://picsum.photos/400/300?random=21",
         alt: "Urban colorful abstract",
         description: "Bold colors.",
       },
       {
         type: "image",
-        src: "dsc06704.png",
+        src: "https://picsum.photos/400/300?random=22",
         alt: "Dynamic urban artwork",
         description: "Bold colors.",
       },
@@ -144,31 +144,31 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork3-collection": [
       {
         type: "image",
-        src: "dsc01148.png",
+        src: "https://picsum.photos/400/300?random=23",
         alt: "Nature-inspired artwork",
         description: "Nature’s resilience.",
       },
       {
         type: "image",
-        src: "dsc07712.png",
+        src: "https://picsum.photos/400/300?random=24",
         alt: "Fluid nature artwork",
         description: "Fluid forms.",
       },
       {
         type: "image",
-        src: "dsc07680.png",
+        src: "https://picsum.photos/400/300?random=25",
         alt: "Human connection artwork",
         description: "Human connection.",
       },
       {
         type: "image",
-        src: "dsc07629.png",
+        src: "https://picsum.photos/400/300?random=26",
         alt: "Abstract nature artwork",
         description: "Abstract forms.",
       },
       {
         type: "image",
-        src: "dsc07596.png",
+        src: "https://picsum.photos/400/300?random=27",
         alt: "Abstract nature composition",
         description: "Abstract forms.",
       },
@@ -176,25 +176,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork4-collection": [
       {
         type: "image",
-        src: "dsc03243-recovered.jpg",
+        src: "https://picsum.photos/400/300?random=28",
         alt: "Abstract human connection",
         description: "Human connection.",
       },
       {
         type: "image",
-        src: "dsc03092.jpg",
+        src: "https://picsum.photos/400/300?random=29",
         alt: "Abstract vibrant forms",
         description: "Abstract forms.",
       },
       {
         type: "image",
-        src: "dsc03255.jpg",
+        src: "https://picsum.photos/400/300?random=30",
         alt: "Abstract colorful forms",
         description: "Abstract forms.",
       },
       {
         type: "image",
-        src: "dsc03065.jpg",
+        src: "https://picsum.photos/400/300?random=31",
         alt: "Abstract dynamic forms",
         description: "Abstract forms.",
       },
@@ -202,43 +202,43 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork5-collection": [
       {
         type: "image",
-        src: "PET MAGAZINE_page-0001.jpg",
+        src: "https://picsum.photos/400/300?random=32",
         alt: "Minimalist solitude artwork",
         description: "Solitude essence.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0002.jpg",
+        src: "https://picsum.photos/400/300?random=33",
         alt: "Minimalist line artwork",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0003.jpg",
+        src: "https://picsum.photos/400/300?random=34",
         alt: "Minimalist line composition",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0004.jpg",
+        src: "https://picsum.photos/400/300?random=35",
         alt: "Minimalist abstract lines",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0005.jpg",
+        src: "https://picsum.photos/400/300?random=36",
         alt: "Minimalist line design",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0006.jpg",
+        src: "https://picsum.photos/400/300?random=37",
         alt: "Minimalist line art",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "PET MAGAZINE_page-0007.jpg",
+        src: "https://picsum.photos/400/300?random=38",
         alt: "Minimalist line piece",
         description: "Minimalist lines.",
       },
@@ -246,21 +246,21 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork6-collection": [
       {
         type: "video",
-        src: "",
+        src: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
         alt: "Video of shadow play",
         description: "Shadow play.",
       },
     ],
     "artwork7-collection": [
       {
-        type: "video",
-        src: "https://youtu.be/hcSeyMMeoAg?si=Wu0gP2nuorBCSKGz",
+        type: "image",
+        src: "https://picsum.photos/400/300?random=39",
         alt: "Modern chaos artwork",
         description: "Modern chaos.",
       },
       {
         type: "image",
-        src: "assets/images/artwork7_2.jpg",
+        src: "https://picsum.photos/400/300?random=40",
         alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
       },
@@ -268,13 +268,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork8-collection": [
       {
         type: "image",
-        src: "assets/images/artwork8_1.jpg",
+        src: "https://picsum.photos/400/300?random=41",
         alt: "Tranquil ode artwork",
         description: "Tranquil ode.",
       },
       {
         type: "image",
-        src: "assets/images/artwork8_2.jpg",
+        src: "https://picsum.photos/400/300?random=42",
         alt: "Soft gradients artwork",
         description: "Soft gradients.",
       },
@@ -282,13 +282,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork9-collection": [
       {
         type: "image",
-        src: "assets/images/artwork9_1.jpg",
+        src: "https://picsum.photos/400/300?random=43",
         alt: "Identity fragments artwork",
         description: "Identity fragments.",
       },
       {
         type: "image",
-        src: "assets/images/artwork9_2.jpg",
+        src: "https://picsum.photos/400/300?random=44",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
@@ -296,13 +296,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork10-collection": [
       {
         type: "image",
-        src: "assets/images/artwork10_1.jpg",
+        src: "https://picsum.photos/400/300?random=45",
         alt: "Time meditation artwork",
         description: "Time meditation.",
       },
       {
         type: "image",
-        src: "assets/images/artwork10_2.jpg",
+        src: "https://picsum.photos/400/300?random=46",
         alt: "Layered textures artwork",
         description: "Layered textures.",
       },
@@ -414,9 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
             renderMedia(currentImages[0], title, date);
             galleryModal.classList.add("show");
             setTimeout(() => {
-              galleryModal
-                .querySelector(".modal-content")
-                ?.classList.add("show");
+              galleryModal.querySelector(".modal-content")?.classList.add("show");
             }, 10);
           }
         } else {
@@ -433,15 +431,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const switchMedia = (newIndex) => {
       pauseCurrentVideo();
       currentIndex = newIndex;
-      const title = document.querySelector(".artwork-title")?.innerText || "";
-      const date = document.querySelector(".artwork-date")?.innerText || "";
+      const title =
+        document.querySelector(".artwork-title")?.innerText || "";
+      const date =
+        document.querySelector(".artwork-date")?.innerText || "";
       renderMedia(currentImages[currentIndex], title, date);
     };
 
     prevButton.addEventListener("click", () => {
-      switchMedia(
-        (currentIndex - 1 + currentImages.length) % currentImages.length
-      );
+      switchMedia((currentIndex - 1 + currentImages.length) % currentImages.length);
     });
 
     nextButton.addEventListener("click", () => {
@@ -543,9 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleContactModal(true);
     });
 
-    closeContactModal.addEventListener("click", () =>
-      toggleContactModal(false)
-    );
+    closeContactModal.addEventListener("click", () => toggleContactModal(false));
     contactModal.addEventListener("click", (event) => {
       if (event.target === contactModal) {
         toggleContactModal(false);
