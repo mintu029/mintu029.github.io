@@ -257,6 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
         src: "https://picsum.photos/400/300?random=40",
         alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
+        
       },
     ],
     "artwork8-collection": [
