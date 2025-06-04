@@ -451,9 +451,10 @@ body.dark-mode .section-title {
 .artworks-grid .artwork-image:hover {
   filter: none;
   box-shadow: 0 0 20px rgba(214, 138, 122, 0.7);
-  transform: scale(0.8);
+  
 }
-
+.artworks-grid:hover .artwork-image:hover {
+transform: scale(0.8);}
 body.dark-mode .artworks-grid .artwork-image:hover {
   box-shadow: 0 0 20px rgba(138, 181, 167, 0.7);
 }
