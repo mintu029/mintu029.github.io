@@ -414,7 +414,9 @@ document.addEventListener("DOMContentLoaded", () => {
             renderMedia(currentImages[0], title, date);
             galleryModal.classList.add("show");
             setTimeout(() => {
-              galleryModal.querySelector(".modal-content")?.classList.add("show");
+              galleryModal
+                .querySelector(".modal-content")
+                ?.classList.add("show");
             }, 10);
           }
         } else {
@@ -431,15 +433,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const switchMedia = (newIndex) => {
       pauseCurrentVideo();
       currentIndex = newIndex;
-      const title =
-        document.querySelector(".artwork-title")?.innerText || "";
-      const date =
-        document.querySelector(".artwork-date")?.innerText || "";
+      const title = document.querySelector(".artwork-title")?.innerText || "";
+      const date = document.querySelector(".artwork-date")?.innerText || "";
       renderMedia(currentImages[currentIndex], title, date);
     };
 
     prevButton.addEventListener("click", () => {
-      switchMedia((currentIndex - 1 + currentImages.length) % currentImages.length);
+      switchMedia(
+        (currentIndex - 1 + currentImages.length) % currentImages.length
+      );
     });
 
     nextButton.addEventListener("click", () => {
@@ -541,7 +543,9 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleContactModal(true);
     });
 
-    closeContactModal.addEventListener("click", () => toggleContactModal(false));
+    closeContactModal.addEventListener("click", () =>
+      toggleContactModal(false)
+    );
     contactModal.addEventListener("click", (event) => {
       if (event.target === contactModal) {
         toggleContactModal(false);
