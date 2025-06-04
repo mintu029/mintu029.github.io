@@ -80,19 +80,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork1-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=14",
+        src: "20230915_194433000_iOS.jpg",
         alt: "Light and shadow artwork",
         description: "Light and shadow.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=15",
+        src: "20230915_200234000_iOS.jpg",
         alt: "Minimalist forms artwork",
         description: "Minimalist forms.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=16",
+        src: "20230915_200319000_iOS.jpg",
+        alt: "Minimalist composition",
+        description: "Minimalist forms.",
+      },
+      {
+        type: "image",
+        src: "20230916_034302000_iOS.jpg",
         alt: "Minimalist composition",
         description: "Minimalist forms.",
       },
