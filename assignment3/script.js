@@ -2,59 +2,162 @@ document.addEventListener("DOMContentLoaded", () => {
   // Collections data
   const collections = {
     "minh-collection": [
-      { src: "DSC09009.png", alt: "Minh 1", description: "Light and shadow interplay." },
+      {
+        src: "DSC09009.png",
+        alt: "Minh 1",
+        description: "Light and shadow interplay.",
+      },
       { src: "DSC00251.jpg", alt: "Minh 2", description: "Minimalist calm." },
-      { src: "DSC00276.jpg", alt: "Minh 3", description: "Introspective forms." },
-      { src: "DSC00321.jpg", alt: "Minh 4", description: "Serene abstraction." },
-      { src: "DSC08935.jpg", alt: "Minh 4", description: "Serene abstraction." },
-      { src: "DSC07983.jpg", alt: "Minh 4", description: "Serene abstraction." },
-      { src: "DSC07892.jpg", alt: "Minh 5", description: "Quiet motion." }
+      {
+        src: "DSC00276.jpg",
+        alt: "Minh 3",
+        description: "Introspective forms.",
+      },
+      {
+        src: "DSC00321.jpg",
+        alt: "Minh 4",
+        description: "Serene abstraction.",
+      },
+      {
+        src: "DSC08935.jpg",
+        alt: "Minh 4",
+        description: "Serene abstraction.",
+      },
+      {
+        src: "DSC07983.jpg",
+        alt: "Minh 4",
+        description: "Serene abstraction.",
+      },
+      { src: "DSC07892.jpg", alt: "Minh 5", description: "Quiet motion." },
     ],
     "tu-collection": [
-      { src: "assets/images/tu1.jpg", alt: "Tu 1", description: "Urban vibrancy." },
-      { src: "assets/images/tu2.jpg", alt: "Tu 2", description: "City chaos." },
-      { src: "assets/images/tu3.jpg", alt: "Tu 3", description: "Dynamic shapes." }
+      { src: "DSC5113.jpg", alt: "Tu 2", description: "City chaos." },
+      { src: "DSC5076.jpg", alt: "Tu 1", description: "Urban vibrancy." },
+      { src: "DSC5057.jpg", alt: "Tu 2", description: "City chaos." },
+      { src: "DSC5391.jpg", alt: "Tu 2", description: "City chaos." },
+      { src: "DSC5439.jpg", alt: "Tu 2", description: "City chaos." },
+      { src: "DSC5148.jpg", alt: "Tu 3", description: "Dynamic shapes." },
     ],
     "artwork1-collection": [
-      { src: "assets/images/artwork1_1.jpg", alt: "Artwork 1-1", description: "Light and shadow." },
-      { src: "assets/images/artwork1_2.jpg", alt: "Artwork 1-2", description: "Minimalist forms." }
+      {
+        src: "assets/images/artwork1_1.jpg",
+        alt: "Artwork 1-1",
+        description: "Light and shadow.",
+      },
+      {
+        src: "assets/images/artwork1_2.jpg",
+        alt: "Artwork 1-2",
+        description: "Minimalist forms.",
+      },
     ],
     "artwork2-collection": [
-      { src: "assets/images/artwork2_1.jpg", alt: "Artwork 2-1", description: "Urban landscapes." },
-      { src: "assets/images/artwork2_2.jpg", alt: "Artwork 2-2", description: "Bold colors." }
+      {
+        src: "assets/images/artwork2_1.jpg",
+        alt: "Artwork 2-1",
+        description: "Urban landscapes.",
+      },
+      {
+        src: "assets/images/artwork2_2.jpg",
+        alt: "Artwork 2-2",
+        description: "Bold colors.",
+      },
     ],
     "artwork3-collection": [
-      { src: "assets/images/artwork3_1.jpg", alt: "Artwork 3-1", description: "Nature’s resilience." },
-      { src: "assets/images/artwork3_2.jpg", alt: "Artwork 3-2", description: "Fluid forms." }
+      {
+        src: "assets/images/artwork3_1.jpg",
+        alt: "Artwork 3-1",
+        description: "Nature’s resilience.",
+      },
+      {
+        src: "assets/images/artwork3_2.jpg",
+        alt: "Artwork 3-2",
+        description: "Fluid forms.",
+      },
     ],
     "artwork4-collection": [
-      { src: "assets/images/artwork4_1.jpg", alt: "Artwork 4-1", description: "Human connection." },
-      { src: "assets/images/artwork4_2.jpg", alt: "Artwork 4-2", description: "Abstract forms." }
+      {
+        src: "assets/images/artwork4_1.jpg",
+        alt: "Artwork 4-1",
+        description: "Human connection.",
+      },
+      {
+        src: "assets/images/artwork4_2.jpg",
+        alt: "Artwork 4-2",
+        description: "Abstract forms.",
+      },
     ],
     "artwork5-collection": [
-      { src: "assets/images/artwork5_1.jpg", alt: "Artwork 5-1", description: "Solitude essence." },
-      { src: "assets/images/artwork5_2.jpg", alt: "Artwork 5-2", description: "Minimalist lines." }
+      {
+        src: "assets/images/artwork5_1.jpg",
+        alt: "Artwork 5-1",
+        description: "Solitude essence.",
+      },
+      {
+        src: "assets/images/artwork5_2.jpg",
+        alt: "Artwork 5-2",
+        description: "Minimalist lines.",
+      },
     ],
     "artwork6-collection": [
-      { src: "assets/images/artwork6_1.jpg", alt: "Artwork 6-1", description: "Cultural fusion." },
-      { src: "assets/images/artwork6_2.jpg", alt: "Artwork 6-2", description: "Bold patterns." }
+      {
+        src: "assets/images/artwork6_1.jpg",
+        alt: "Artwork 6-1",
+        description: "Cultural fusion.",
+      },
+      {
+        src: "assets/images/artwork6_2.jpg",
+        alt: "Artwork 6-2",
+        description: "Bold patterns.",
+      },
     ],
     "artwork7-collection": [
-      { src: "assets/images/artwork7_1.jpg", alt: "Artwork 7-1", description: "Modern chaos." },
-      { src: "assets/images/artwork7_2.jpg", alt: "Artwork 7-2", description: "Dynamic compositions." }
+      {
+        src: "assets/images/artwork7_1.jpg",
+        alt: "Artwork 7-1",
+        description: "Modern chaos.",
+      },
+      {
+        src: "assets/images/artwork7_2.jpg",
+        alt: "Artwork 7-2",
+        description: "Dynamic compositions.",
+      },
     ],
     "artwork8-collection": [
-      { src: "assets/images/artwork8_1.jpg", alt: "Artwork 8-1", description: "Tranquil ode." },
-      { src: "assets/images/artwork8_2.jpg", alt: "Artwork 8-2", description: "Soft gradients." }
+      {
+        src: "assets/images/artwork8_1.jpg",
+        alt: "Artwork 8-1",
+        description: "Tranquil ode.",
+      },
+      {
+        src: "assets/images/artwork8_2.jpg",
+        alt: "Artwork 8-2",
+        description: "Soft gradients.",
+      },
     ],
     "artwork9-collection": [
-      { src: "assets/images/artwork9_1.jpg", alt: "Artwork 9-1", description: "Identity fragments." },
-      { src: "assets/images/artwork9_2.jpg", alt: "Artwork 9-2", description: "Vivid colors." }
+      {
+        src: "assets/images/artwork9_1.jpg",
+        alt: "Artwork 9-1",
+        description: "Identity fragments.",
+      },
+      {
+        src: "assets/images/artwork9_2.jpg",
+        alt: "Artwork 9-2",
+        description: "Vivid colors.",
+      },
     ],
     "artwork10-collection": [
-      { src: "assets/images/artwork10_1.jpg", alt: "Artwork 10-1", description: "Time meditation." },
-      { src: "assets/images/artwork10_2.jpg", alt: "Artwork 10-2", description: "Layered textures." }
-    ]
+      {
+        src: "assets/images/artwork10_1.jpg",
+        alt: "Artwork 10-1",
+        description: "Time meditation.",
+      },
+      {
+        src: "assets/images/artwork10_2.jpg",
+        alt: "Artwork 10-2",
+        description: "Layered textures.",
+      },
+    ],
   };
 
   // Scroll-to-bottom functionality for "More" buttons
@@ -113,7 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentImages.length > 0) {
           const title = card.querySelector(".artwork-title")?.innerText || "";
           const date = card.querySelector(".artwork-date")?.innerText || "";
-          const description = card.querySelector(".artwork-description p")?.innerText || currentImages[0].description;
+          const description =
+            card.querySelector(".artwork-description p")?.innerText ||
+            currentImages[0].description;
 
           galleryImage.src = currentImages[0].src;
           galleryImage.alt = currentImages[0].alt;
@@ -140,17 +245,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (prevButton && nextButton) {
     prevButton.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+      currentIndex =
+        (currentIndex - 1 + currentImages.length) % currentImages.length;
       galleryImage.src = currentImages[currentIndex].src;
       galleryImage.alt = currentImages[currentIndex].alt;
-      galleryInfo.querySelector(".artwork-description p").innerText = currentImages[currentIndex].description;
+      galleryInfo.querySelector(".artwork-description p").innerText =
+        currentImages[currentIndex].description;
     });
 
     nextButton.addEventListener("click", () => {
       currentIndex = (currentIndex + 1) % currentImages.length;
       galleryImage.src = currentImages[currentIndex].src;
       galleryImage.alt = currentImages[currentIndex].alt;
-      galleryInfo.querySelector(".artwork-description p").innerText = currentImages[currentIndex].description;
+      galleryInfo.querySelector(".artwork-description p").innerText =
+        currentImages[currentIndex].description;
     });
   }
 
