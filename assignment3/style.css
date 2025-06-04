@@ -1010,3 +1010,36 @@ body.dark-mode .gallery-nav-button {
     text-shadow: 0 0 5px rgba(232, 205, 166, 0.5);
   }
 }
+.close-artwork {
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 10; /* Đảm bảo nút nằm trên cùng */
+}
+
+body.dark-mode .close-artwork {
+  color: #999;
+  background: rgba(237, 237, 237, 0.5);
+}
+
+.close-artwork:hover {
+  color: #d68a7a;
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+body.dark-mode .close-artwork:hover {
+  color: #8ab5a7;
+  background: rgba(237, 237, 237, 0.8);
+}
+
+
