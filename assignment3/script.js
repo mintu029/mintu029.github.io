@@ -202,43 +202,43 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork5-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=32",
+        src: "PET MAGAZINE_page-0001.jpg",
         alt: "Minimalist solitude artwork",
         description: "Solitude essence.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=33",
+        src: "PET MAGAZINE_page-0002.jpg",
         alt: "Minimalist line artwork",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=34",
+        src: "PET MAGAZINE_page-0003.jpg",
         alt: "Minimalist line composition",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=35",
+        src: "PET MAGAZINE_page-0004.jpg",
         alt: "Minimalist abstract lines",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=36",
+        src: "PET MAGAZINE_page-0005.jpg",
         alt: "Minimalist line design",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=37",
+        src: "PET MAGAZINE_page-0006.jpg",
         alt: "Minimalist line art",
         description: "Minimalist lines.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=38",
+        src: "PET MAGAZINE_page-0007.jpg",
         alt: "Minimalist line piece",
         description: "Minimalist lines.",
       },
@@ -257,7 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
         src: "https://picsum.photos/400/300?random=40",
         alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
-        
       },
     ],
     "artwork8-collection": [
