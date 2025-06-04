@@ -48,37 +48,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "tu-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=8",
+        src: "DSC05113.jpg",
         alt: "Urban chaos artwork",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=9",
+        src: "DSC05057.jpg",
         alt: "Vibrant urban scene",
         description: "Urban vibrancy.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=10",
+        src: "DSC05143.jpg",
         alt: "City-inspired chaotic artwork",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=11",
+        src: "DSC05144.jpg",
         alt: "Urban chaotic composition",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=12",
+        src: "DSC05148.jpg",
         alt: "City-themed abstract",
         description: "City chaos.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=13",
+        src: "DSC05391.jpg",
         alt: "Dynamic urban artwork",
         description: "Dynamic shapes.",
       },
