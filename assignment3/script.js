@@ -247,8 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     "artwork7-collection": [
       {
-        type: "image",
-        src: "https://picsum.photos/400/300?random=40",
+        type: "video",
+        src: "https://www.youtube.com/embed/hcSeyMMeoAg?si=qK0ZH6N-bTbiDsFV",
         alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
       },
