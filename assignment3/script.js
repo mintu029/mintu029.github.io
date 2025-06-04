@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork7-collection": [
       {
         type: "video",
-        src: "https://youtu.be/hcSeyMMeoAg?si=Wu0gP2nuorBCSKGz",
+        link: "https://youtu.be/hcSeyMMeoAg?si=Wu0gP2nuorBCSKGz",
         alt: "Modern chaos artwork",
         description: "Modern chaos.",
       },
