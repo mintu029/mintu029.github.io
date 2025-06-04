@@ -246,9 +246,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork6-collection": [
       {
         type: "video",
-        src: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4",
-        alt: "Video of shadow play",
-        description: "Shadow play.",
+        src: "https://limewire.com/d/DrFbG#kBSSkYmbQj",
+        alt: "ifest video",
+        description: "Minh Tu is director of RMIT International Festival at RMIT Viet Nam",
       },
     ],
     "artwork7-collection": [
@@ -256,22 +256,23 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "video",
         src: "https://www.youtube.com/embed/hcSeyMMeoAg?si=qK0ZH6N-bTbiDsFV",
         alt: "Dynamic composition artwork",
-        description: "Dynamic compositions.",
+        description: "Minh TÚ is director of this music video which called 'LÁ THƯ'",
       },
     ],
     "artwork8-collection": [
       {
-        type: "image",
-        src: "https://picsum.photos/400/300?random=41",
+        type: "video",
+        src: "finalad.mp4",
         alt: "Tranquil ode artwork",
-        description: "Tranquil ode.",
+        description: "Minh Tu is director of this video. He made it to create a advertising for new brand call 'SHIPAHOLIC'",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=42",
-        alt: "Soft gradients artwork",
-        description: "Soft gradients.",
+        src: "IMG_7384.jpg",
+        alt: "bts",
+        description: "Behind The Scence",
       },
+     
     ],
     "artwork9-collection": [
       {
