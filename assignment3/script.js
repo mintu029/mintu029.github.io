@@ -270,12 +270,48 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork9-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=43",
+        src: "000032.jpg",
         alt: "Identity fragments artwork",
         description: "Identity fragments.",
       },
       {
-        type: "image",
+        type: "000006.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000009.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000017.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000029.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000043.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000065.jpg",
+        src: "https://picsum.photos/400/300?random=44",
+        alt: "Vivid colors artwork",
+        description: "Vivid colors.",
+      },
+      {
+        type: "000066.jpg",
         src: "https://picsum.photos/400/300?random=44",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
