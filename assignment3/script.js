@@ -144,32 +144,26 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork3-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=23",
+        src: "DSC07596.png",
         alt: "Nature-inspired artwork",
         description: "Nature’s resilience.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=24",
+        src: "DSC07629.png",
         alt: "Fluid nature artwork",
         description: "Fluid forms.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=25",
+        src: "DSC07647.png",
         alt: "Human connection artwork",
         description: "Human connection.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=26",
+        src: "DSC07712.png",
         alt: "Abstract nature artwork",
-        description: "Abstract forms.",
-      },
-      {
-        type: "image",
-        src: "https://picsum.photos/400/300?random=27",
-        alt: "Abstract nature composition",
         description: "Abstract forms.",
       },
     ],
