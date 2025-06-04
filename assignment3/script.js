@@ -281,44 +281,44 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "Identity fragments.",
       },
       {
-        type: "000006.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000006.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000009.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000009.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000017.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000017.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000029.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000029.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000043.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000043.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000065.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000065.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
       {
-        type: "000066.jpg",
-        src: "https://picsum.photos/400/300?random=44",
+        type: "image",
+        src: "000066.jpg",
         alt: "Vivid colors artwork",
         description: "Vivid colors.",
       },
@@ -338,17 +338,16 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
   };
-
-  // Scroll-to-bottom functionality for "More" buttons
+// Scroll-to-bottom functionality for "More" buttons
   const moreLinks = document.querySelectorAll(".more-link");
   if (moreLinks.length) {
     moreLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: "smooth",
-        });
+        const scrollContainer = document.querySelector(".scroll-container");
+        if (scrollContainer) {
+          scrollContainer.scrollIntoView({ behavior: "smooth" });
+        }
       });
     });
   }
@@ -356,23 +355,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animation for artwork cards in scroll container
   const cards = document.querySelectorAll(".animate-on-scroll");
   const scrollContainer = document.querySelector(".scroll-container");
-
   if (scrollContainer && cards.length) {
-    const checkVisibility = () => {
-      const containerRect = scrollContainer.getBoundingClientRect();
-      cards.forEach((card) => {
-        const cardRect = card.getBoundingClientRect();
-        const isVisible =
-          cardRect.top >= containerRect.top &&
-          cardRect.top <= containerRect.bottom;
-        if (isVisible) {
-          card.classList.add("visible");
-        }
-      });
-    };
-
-    scrollContainer.addEventListener("scroll", checkVisibility);
-    checkVisibility();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { root: scrollContainer, threshold: 0.1 }
+    );
+    cards.forEach((card) => observer.observe(card));
   }
 
   // Gallery and toggle functionality
@@ -386,8 +380,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImages = [];
   let currentIndex = 0;
 
-  // Function to render media (image or video)
-  const renderMedia = (media, title, date) => {
+  // Function to render media (image, video, or iframe)
+  const renderMedia = (media) => {
     if (!galleryMedia) return;
     galleryMedia.innerHTML = "";
     let mediaElement;
@@ -398,24 +392,35 @@ document.addEventListener("DOMContentLoaded", () => {
       mediaElement.alt = media.alt;
       mediaElement.setAttribute("aria-label", media.description);
     } else if (media.type === "video") {
-      mediaElement = document.createElement("video");
-      mediaElement.src = media.src;
-      mediaElement.alt = media.alt;
-      mediaElement.controls = true;
-      mediaElement.autoplay = true;
-      mediaElement.muted = true;
-      mediaElement.loop = true;
-      mediaElement.setAttribute("aria-label", media.description);
+      if (media.src.includes("youtube.com")) {
+        mediaElement = document.createElement("iframe");
+        mediaElement.src = media.src;
+        mediaElement.allow = "autoplay; encrypted-media";
+        mediaElement.allowFullscreen = true;
+        mediaElement.setAttribute("aria-label", media.description);
+      } else {
+        mediaElement = document.createElement("video");
+        mediaElement.src = media.src;
+        mediaElement.alt = media.alt;
+        mediaElement.controls = true;
+        mediaElement.autoplay = true;
+        mediaElement.muted = true;
+        mediaElement.loop = true;
+        mediaElement.setAttribute("aria-label", media.description);
+      }
     }
 
     if (mediaElement) {
+      mediaElement.addEventListener("error", () => {
+        galleryInfo.innerHTML += '<p>Error loading media.</p>';
+      });
       galleryMedia.appendChild(mediaElement);
     }
 
     if (galleryInfo) {
       galleryInfo.innerHTML = `
-        <h3 class="artwork-title">${title}</h3>
-        <p class="artwork-date">${date}</p>
+        <h3 class="artwork-title">${media.title}</h3>
+        <p class="artwork-date">${media.date}</p>
         <div class="artwork-description"><p>${media.description}</p></div>
       `;
     }
@@ -426,6 +431,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentVideo = galleryMedia?.querySelector("video");
     if (currentVideo) {
       currentVideo.pause();
+    }
+    const currentIframe = galleryMedia?.querySelector("iframe");
+    if (currentIframe) {
+      currentIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     }
   };
 
@@ -439,14 +448,16 @@ document.addEventListener("DOMContentLoaded", () => {
           currentIndex = 0;
 
           if (currentImages.length > 0) {
-            const title = card.querySelector(".artwork-title")?.innerText || "";
-            const date = card.querySelector(".artwork-date")?.innerText || "";
-            renderMedia(currentImages[0], title, date);
+            renderMedia(currentImages[0]);
             galleryModal.classList.add("show");
             setTimeout(() => {
               galleryModal
                 .querySelector(".modal-content")
                 ?.classList.add("show");
+              const firstFocusable = galleryModal.querySelector(
+                'button, [href], [tabindex]:not([tabindex="-1"])'
+              );
+              firstFocusable?.focus();
             }, 10);
           }
         } else {
@@ -459,14 +470,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Focus trapping for gallery modal
+  if (galleryModal) {
+    const focusableElements = galleryModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    galleryModal.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
+  }
+
   if (prevButton && nextButton) {
     const switchMedia = (newIndex) => {
       pauseCurrentVideo();
       currentIndex = newIndex;
-      const title = document.querySelector(".artwork-title")?.innerText || "";
-      const date = document.querySelector(".artwork-date")?.innerText || "";
-      renderMedia(currentImages[currentIndex], title, date);
+      renderMedia(currentImages[currentIndex]);
     };
+
+    prevButton.setAttribute("tabindex", "0");
+    nextButton.setAttribute("tabindex", "0");
 
     prevButton.addEventListener("click", () => {
       switchMedia(
@@ -485,12 +518,18 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryModal.querySelector(".modal-content")?.classList.remove("show");
       setTimeout(() => {
         galleryModal.classList.remove("show");
+        document.body.focus();
       }, 500);
     };
 
     closeGalleryModal.addEventListener("click", closeModal);
     galleryModal.addEventListener("click", (event) => {
       if (event.target === galleryModal) {
+        closeModal();
+      }
+    });
+    galleryModal.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
         closeModal();
       }
     });
@@ -506,18 +545,24 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("header"),
       document.querySelector(".footer"),
       document.querySelector(".scroll-container"),
-      document.querySelector(".project-description"),
+      document.querySelector(".project-description")
     ].filter(Boolean);
 
+    const savedTheme = localStorage.getItem("theme");
     if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      savedTheme === "dark" ||
+      (!savedTheme &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       elementsToToggle.forEach((el) => el.classList.add("dark-mode"));
     }
 
     themeToggle.addEventListener("click", () => {
       elementsToToggle.forEach((el) => el.classList.toggle("dark-mode"));
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+      );
     });
   }
 
@@ -528,13 +573,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (aboutLink && aboutModal && closeModal) {
     const aboutModalContent = aboutModal.querySelector(".modal-content");
+    const focusableElements = aboutModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
     const toggleAboutModal = (show) => {
       if (show) {
         aboutModal.classList.add("show");
-        setTimeout(() => aboutModalContent?.classList.add("show"), 10);
+        setTimeout(() => {
+          aboutModalContent?.classList.add("show");
+          firstElement?.focus();
+        }, 10);
       } else {
         aboutModalContent?.classList.remove("show");
-        setTimeout(() => aboutModal.classList.remove("show"), 500);
+        setTimeout(() => {
+          aboutModal.classList.remove("show");
+          document.body.focus();
+        }, 500);
       }
     };
 
@@ -549,6 +606,19 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleAboutModal(false);
       }
     });
+    aboutModal.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        toggleAboutModal(false);
+      } else if (e.key === "Tab") {
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
   }
 
   // Contact modal functionality
@@ -558,13 +628,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (contactLink && contactModal && closeContactModal) {
     const contactModalContent = contactModal.querySelector(".modal-content");
+    const focusableElements = contactModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
     const toggleContactModal = (show) => {
       if (show) {
         contactModal.classList.add("show");
-        setTimeout(() => contactModalContent?.classList.add("show"), 10);
+        setTimeout(() => {
+          contactModalContent?.classList.add("show");
+          firstElement?.focus();
+        }, 10);
       } else {
         contactModalContent?.classList.remove("show");
-        setTimeout(() => contactModal.classList.remove("show"), 500);
+        setTimeout(() => {
+          contactModal.classList.remove("show");
+          document.body.focus();
+        }, 500);
       }
     };
 
@@ -573,12 +655,23 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleContactModal(true);
     });
 
-    closeContactModal.addEventListener("click", () =>
-      toggleContactModal(false)
-    );
+    closeContactModal.addEventListener("click", () => toggleContactModal(false));
     contactModal.addEventListener("click", (event) => {
       if (event.target === contactModal) {
         toggleContactModal(false);
+      }
+    });
+    contactModal.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        toggleContactModal(false);
+      } else if (e.key === "Tab") {
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
       }
     });
   }
@@ -586,7 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Enhanced particle animation
   const particleContainer = document.querySelector(".particle-container");
   if (particleContainer) {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 15; i++) {
       const particle = document.createElement("div");
       const shapeType = Math.floor(Math.random() * 3);
       particle.classList.add("particle");
@@ -599,7 +692,6 @@ document.addEventListener("DOMContentLoaded", () => {
       particle.style.top = `${Math.random() * 100}vh`;
       particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
-      particle.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
       particleContainer.appendChild(particle);
     }
   }

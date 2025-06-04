@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minh Tu's Exhibition</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="DSC09009.jpg" as="image" />
+    <link ospedale="DSC05113.jpg" as="image" />
   </head>
   <body>
-    <div class="background-blur"></div>
     <div class="particle-container"></div>
     <div class="content-wrapper">
       <header>
         <div class="header-title">MINH TU'S EXHIBITION</div>
         <nav>
-          <a href="#artworks">Artworks</a>
+          <a href="#artworks" aria-current="page">Artworks</a>
           <a href="#" id="about-link">About</a>
           <a href="#" id="contact-link">Contact</a>
         </nav>
@@ -55,7 +56,7 @@
           </p>
           <p>
             Email:
-            <a href="leminhtu2016lv@gmail.com" class="contact-link"
+            <a href="mailto:leminhtu2016lv@gmail.com" class="contact-link"
               >leminhtu2016lv@gmail.com</a
             ><br />
             Instagram:
@@ -66,9 +67,7 @@
               >@minhtu029</a
             ><br />
             Phone:
-            <a
-              >+61 422 884 063</a
-            >
+            <a href="tel:+61422884063">+61 422 884 063</a>
           </p>
         </div>
       </div>
@@ -81,7 +80,7 @@
             <button id="gallery-prev" class="gallery-nav-button" aria-label="Previous Media">←</button>
             <div class="gallery-image-wrapper">
               <div id="gallery-media"></div>
-              <div id="gallery-info" class="gallery-info"></div>
+              <div id="gallery-info" class="gallery-info" aria-live="polite"></div>
             </div>
             <button id="gallery-next" class="gallery-nav-button" aria-label="Next Media">→</button>
           </div>
@@ -91,7 +90,7 @@
       <h1 class="section-title">ABOUT ARTWORKS</h1>
 
       <h2>SPECIAL</h2>
-      <div class="artworks-grid">
+      <div class="artworks-grid" id="artworks">
         <div
           class="artwork-card toggle-card"
           data-collection-id="minh-collection"
@@ -161,6 +160,7 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">01/08/2024</p>
+              <h3 class="artwork-title">Light and Shadow</h3>
               <div class="artwork-description">
                 <p>
                   This piece explores the intersection of light and shadow,
@@ -182,6 +182,7 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">02/08/2024</p>
+              <h3 class="artwork-title">Urban Chaos</h3>
               <div class="artwork-description">
                 <p>
                   Inspired by urban landscapes, this artwork captures the
@@ -203,6 +204,7 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">03/08/2024</p>
+              <h3 class="artwork-title">Nature’s Resilience</h3>
               <div class="artwork-description">
                 <p>
                   A reflection on nature’s resilience, using fluid forms and
@@ -223,6 +225,7 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">04/08/2024</p>
+              <h3 class="artwork-title">Human Connection</h3>
               <div class="artwork-description">
                 <p>
                   An exploration of human connection through abstract forms and
@@ -243,6 +246,7 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">05/08/2024</p>
+              <h3 class="artwork-title">Solitude</h3>
               <div class="artwork-description">
                 <p>
                   Capturing the essence of solitude with minimalist lines and
@@ -263,12 +267,13 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">06/08/2024</p>
+              <h3 class="artwork-title">Cultural Fusion</h3>
               <div class="artwork-description">
                 <p>
                   A vibrant depiction of cultural fusion through bold patterns.
                 </p>
               </div>
-              </div>
+            </div>
           </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
@@ -282,13 +287,14 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">07/08/2024</p>
+              <h3 class="artwork-title">Modern Chaos</h3>
               <div class="artwork-description">
                 <p>
                   Reflecting the chaos of modern life with dynamic compositions.
                 </p>
               </div>
-              </div>
             </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork8-collection"
@@ -301,13 +307,14 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">08/08/2024</p>
+              <h3 class="artwork-title">Tranquility</h3>
               <div class="artwork-description">
                 <p>
                   An ode to tranquility using soft gradients and flowing shapes.
                 </p>
               </div>
-              </div>
             </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork9-collection"
@@ -320,13 +327,14 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">09/08/2024</p>
+              <h3 class="artwork-title">Identity</h3>
               <div class="artwork-description">
                 <p>
                   Exploring identity through fragmented forms and vivid colors.
                 </p>
               </div>
-              </div>
             </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork10-collection"
@@ -339,16 +347,18 @@
             />
             <div class="artwork-info">
               <p class="artwork-date">10/08/2024</p>
+              <h3 class="artwork-title">Time Meditation</h3>
               <div class="artwork-description">
                 <p>
                   A meditation on time using layered textures and subtle tones.
                 </p>
               </div>
-            </div>         
-         </div>
-       </div>
-     </div>
-   <div class="footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
         <div class="footer-art">
           <h2 class="footer-title">
             <span>M</span><span>I</span><span>N</span><span>H</span>
@@ -364,8 +374,9 @@
             © 2024 Minh Tu's Exhibition. All rights reserved.
           </p>
         </div>
-        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <script src="script.js"></script>
+    </div>
   </body>
 </html>
