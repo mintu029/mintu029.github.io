@@ -784,7 +784,7 @@ body.dark-mode .scroll-container {
 }
 
 .gallery-container {
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   position: relative;
