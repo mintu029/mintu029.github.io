@@ -254,12 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork7-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=39",
-        alt: "Modern chaos artwork",
-        description: "Modern chaos.",
-      },
-      {
-        type: "image",
         src: "https://picsum.photos/400/300?random=40",
         alt: "Dynamic composition artwork",
         description: "Dynamic compositions.",
