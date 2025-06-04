@@ -4,45 +4,39 @@ document.addEventListener("DOMContentLoaded", () => {
     "minh-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=1",
+        src: "DSC09009.jpg",
         alt: "Drawing exploring light and shadow",
         description: "Light and shadow interplay.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=2",
+        src: "DSC08972.jpg",
         alt: "Minimalist calm artwork",
         description: "Minimalist calm.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=3",
+        src: "DSC07983.jpg",
         alt: "Introspective minimalist artwork",
         description: "Introspective forms.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=4",
+        src: "DSC00321.jpg",
         alt: "Serene abstract drawing",
         description: "Serene abstraction.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=5",
+        src: "DSC00276.jpg",
         alt: "Serene abstract composition",
         description: "Serene abstraction.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=6",
+        src: "DSC00251.jpg",
         alt: "Serene abstract piece",
         description: "Serene abstraction.",
-      },
-      {
-        type: "image",
-        src: "https://picsum.photos/400/300?random=7",
-        alt: "Drawing with quiet motion",
-        description: "Quiet motion.",
       },
     ],
     "tu-collection": [
