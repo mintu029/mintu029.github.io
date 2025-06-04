@@ -326,13 +326,37 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork10-collection": [
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=45",
+        src: "finaldonhen.jpg",
         alt: "Time meditation artwork",
         description: "Time meditation.",
       },
       {
         type: "image",
-        src: "https://picsum.photos/400/300?random=46",
+        src: "Không có tiêu đề 5.jpg",
+        alt: "Layered textures artwork",
+        description: "Layered textures.",
+      },
+         {
+        type: "image",
+        src: "Không có tiêu đề 5.jpg",
+        alt: "Layered textures artwork",
+        description: "Layered textures.",
+      },
+         {
+        type: "image",
+        src: "Không có tiêu đề 7.jpg",
+        alt: "Layered textures artwork",
+        description: "Layered textures.",
+      },
+         {
+        type: "image",
+        src: "Không có tiêu đề 18.jpg",
+        alt: "Layered textures artwork",
+        description: "Layered textures.",
+      },
+         {
+        type: "image",
+        src: "ki.jpg",
         alt: "Layered textures artwork",
         description: "Layered textures.",
       },
