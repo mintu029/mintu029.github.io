@@ -42,7 +42,9 @@ body.dark-mode {
   pointer-events: none;
   z-index: -1;
 }
-
+.TU {
+ justify-content: center;
+}
 .particle {
   position: absolute;
   opacity: 0.8;
