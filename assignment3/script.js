@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork6-collection": [
       {
         type: "video",
-        src: "https://www.youtube.com/embed/pXO3E8n8f7Q?si=iHdB384kT7XpKhF5",
+        src: "https://www.youtube.com/embed/pXO3E8n8f7Q?si=QXsdRtiTOq4MhHyO",
         alt: "ifest video",
         tilte: "ifest video",
         description:
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "phanthiet-collection": [
       {
         type: "video",
-        src: "https://www.youtube.com/embed/vrzpngJ7yGo?si=16ZndhjwilSS1rs3",
+        src: "https://www.youtube.com/embed/vrzpngJ7yGo?si=CPNeOmYkoT3esvlU",
         alt: "Phan Thiet",
         tilte: "Phan Thiet",
         description:
