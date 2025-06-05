@@ -244,8 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         type: "image",
         src: "PET MAGAZINE_page-0001.jpg",
-        alt: "Minimalist solitude artwork",
-        description: "Solitude essence.",
+        alt: "PET MAGAZINE",
+        description: "PET MAGAZINE",
       },
       {
         type: "image",
@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         type: "video",
         src: "finalad.mp4",
-        alt: "Tranquil ode artwork",
+        alt: "Shipaholic",
          tilte: "Shipaholic",
         description: "Minh Tu is director of this video. He made it to create a advertising for new brand call 'SHIPAHOLIC'",
       },

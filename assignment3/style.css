@@ -484,14 +484,14 @@ body.dark-mode .artwork-title {
 .artwork-date {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   margin: 5px 0;
-  color: #666;
+  color: #000000;
   transition: color 0.3s ease;
 }
 
 body.dark-mode .artwork-date {
-  color: #999;
+  color: #ffffff;
 }
 
 .artwork-description {
