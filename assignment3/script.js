@@ -40,6 +40,46 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "FESTIVAL",
       },
     ],
+     "vie-collection": [
+      {
+        type: "image",
+        src: "DSC05113.jpg",
+        alt: "PHU YEN",
+        description: "PHU YEN",
+      },
+      {
+        type: "image",
+        src: "DSC09882.jpg",
+        alt: "VIE",
+        description: "VIE",
+      },
+   
+      {
+        type: "image",
+        src: "DSC09880.jpg",
+        alt: "VIE",
+        description: "VIE",
+      },
+      {
+        type: "image",
+        src: "DSC09861.jpg",
+        alt: "VIE",
+        description: "VIE",
+      },
+      {
+        type: "image",
+        src: "DSC09848.jpg",
+        alt: "VIE",
+        description: "VIE",
+      },  ],
+       "ind-collection": [
+      {
+        type: "video",
+        src: "final.mp4",
+        alt: "PHU YEN",
+        description: "PHU YEN",
+      }, ],
+
     "tu-collection": [
       {
         type: "image",
@@ -411,50 +451,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to render media (image, video, or iframe)
   const renderMedia = (media) => {
-    if (!galleryMedia) return;
-    galleryMedia.innerHTML = "";
-    let mediaElement;
+  if (!galleryMedia) return;
+  galleryMedia.innerHTML = "";
+  let mediaElement;
 
-    if (media.type === "image") {
-      mediaElement = document.createElement("img");
+  if (media.type === "image") {
+    mediaElement = document.createElement("img");
+    mediaElement.src = media.src;
+    mediaElement.alt = media.alt;
+    mediaElement.setAttribute("aria-label", media.description);
+  } else if (media.type === "video") {
+    if (media.src.includes("youtube.com")) {
+      mediaElement = document.createElement("iframe");
+      mediaElement.src = media.src;
+      mediaElement.allow = "autoplay; encrypted-media";
+      mediaElement.allowFullscreen = true;
+      mediaElement.setAttribute("aria-label", media.description);
+    } else {
+      mediaElement = document.createElement("video");
       mediaElement.src = media.src;
       mediaElement.alt = media.alt;
+      mediaElement.controls = true;
+      mediaElement.autoplay = true; // Giữ autoplay nếu cần
+      // Xóa mediaElement.muted = true;
+      mediaElement.loop = true;
       mediaElement.setAttribute("aria-label", media.description);
-    } else if (media.type === "video") {
-      if (media.src.includes("youtube.com")) {
-        mediaElement = document.createElement("iframe");
-        mediaElement.src = media.src;
-        mediaElement.allow = "autoplay; encrypted-media";
-        mediaElement.allowFullscreen = true;
-        mediaElement.setAttribute("aria-label", media.description);
-      } else {
-        mediaElement = document.createElement("video");
-        mediaElement.src = media.src;
-        mediaElement.alt = media.alt;
-        mediaElement.controls = true;
-        mediaElement.autoplay = true;
-        mediaElement.muted = true;
-        mediaElement.loop = true;
-        mediaElement.setAttribute("aria-label", media.description);
-      }
     }
+  }
 
-    if (mediaElement) {
-      mediaElement.addEventListener("error", () => {
-        galleryInfo.innerHTML += '<p>Error loading media.</p>';
-      });
-      galleryMedia.appendChild(mediaElement);
-    }
+  if (mediaElement) {
+    mediaElement.addEventListener("error", () => {
+      galleryInfo.innerHTML = '<p>Error loading media.</p>';
+    });
+    galleryMedia.appendChild(mediaElement);
+  }
 
-    if (galleryInfo) {
-      galleryInfo.innerHTML = `
-        <h3 class="artwork-title">${media.title}</h3>
-        <p class="artwork-date">${media.date}</p>
-        <div class="artwork-description"><p>${media.description}</p></div>
-      `;
-    }
-  };
-
+  if (galleryInfo) {
+    galleryInfo.innerHTML = `
+      <h3 class="artwork-title">${media.title || "Untitled"}</h3>
+      <p class="artwork-date">${media.date || ""}</p>
+      <div class="artwork-description"><p>${media.description || "No description available"}</p></div>
+    `;
+  }
+  
+};
   // Pause any playing video
   const pauseCurrentVideo = () => {
     const currentVideo = galleryMedia?.querySelector("video");
