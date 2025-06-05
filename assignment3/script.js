@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "phanthiet-collection": [
       {
         type: "video",
-        src: "https://www.youtube.com/embed/vrzpngJ7yGo?si=JDm7ai00jkdSY7bQ",
+        src: "https://www.youtube.com/embed/vrzpngJ7yGo?si=16ZndhjwilSS1rs3",
         alt: "Phan Thiet",
         tilte: "Phan Thiet",
         description:
