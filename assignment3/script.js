@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "FESTIVAL",
       },
     ],
-     "vie-collection": [
+    "vie-collection": [
       {
         type: "image",
         src: "DSC05113.jpg",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "VIE",
         description: "VIE",
       },
-   
+
       {
         type: "image",
         src: "DSC09880.jpg",
@@ -71,14 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
         src: "DSC09848.jpg",
         alt: "VIE",
         description: "VIE",
-      },  ],
-       "ind-collection": [
+      },
+    ],
+    "ind-collection": [
       {
         type: "video",
         src: "final.mp4",
         alt: "PHU YEN",
         description: "PHU YEN",
-      }, ],
+      },
+    ],
 
     "tu-collection": [
       {
@@ -183,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
     "artwork3-collection": [
-        {
+      {
         type: "image",
         src: "DSC01148.png",
         alt: "RMIT",
@@ -287,9 +289,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "artwork6-collection": [
       {
         type: "video",
-        src: "https://limewire.com/d/DrFbG#kBSSkYmbQj",
+        src: "https://www.youtube.com/embed/pXO3E8n8f7Q?si=iHdB384kT7XpKhF5",
         alt: "ifest video",
-        description: "Minh Tu is director of RMIT International Festival at RMIT Viet Nam",
+        tilte: "ifest video",
+        description:
+          "Minh Tu is director of RMIT International Festival at RMIT Viet Nam",
       },
     ],
     "artwork7-collection": [
@@ -298,7 +302,8 @@ document.addEventListener("DOMContentLoaded", () => {
         src: "https://www.youtube.com/embed/hcSeyMMeoAg?si=qK0ZH6N-bTbiDsFV",
         alt: "Lá Thư",
         tilte: "Lá Thư",
-        description: "Minh TÚ is director of this music video which called 'LÁ THƯ'",
+        description:
+          "Minh Tu is director of this music video which called 'LÁ THƯ'",
       },
     ],
     "artwork8-collection": [
@@ -306,8 +311,9 @@ document.addEventListener("DOMContentLoaded", () => {
         type: "video",
         src: "finalad.mp4",
         alt: "Shipaholic",
-         tilte: "Shipaholic",
-        description: "Minh Tu is director of this video. He made it to create a advertising for new brand call 'SHIPAHOLIC'",
+        tilte: "Shipaholic",
+        description:
+          "Minh Tu is director of this video. He made it to create a advertising for new brand call 'SHIPAHOLIC'",
       },
       {
         type: "image",
@@ -316,7 +322,16 @@ document.addEventListener("DOMContentLoaded", () => {
         tilte: "Shipaholic",
         description: "Behind The Scence",
       },
-     
+    ],
+    "phanthiet-collection": [
+      {
+        type: "video",
+        src: "https://www.youtube.com/embed/vrzpngJ7yGo?si=JDm7ai00jkdSY7bQ",
+        alt: "Phan Thiet",
+        tilte: "Phan Thiet",
+        description:
+          " This is video recap a trip of RMiT International Club to Phan Thiet city",
+      },
     ],
     "artwork9-collection": [
       {
@@ -381,25 +396,25 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "LONELINESS",
         description: "LONELINESS",
       },
-         {
+      {
         type: "image",
         src: "Không có tiêu đề 5.jpg",
         alt: "LONELINESS",
         description: "LONELINESS",
       },
-         {
+      {
         type: "image",
         src: "Không có tiêu đề 7.jpg",
         alt: "LONELINESS",
         description: "LONELINESS",
       },
-         {
+      {
         type: "image",
         src: "Không có tiêu đề 18.jpg",
         alt: "LONELINESS",
         description: "LONELINESS",
       },
-         {
+      {
         type: "image",
         src: "ki.jpg",
         alt: "",
@@ -407,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
   };
-// Scroll-to-bottom functionality for "More" buttons
+  // Scroll-to-bottom functionality for "More" buttons
   const moreLinks = document.querySelectorAll(".more-link");
   if (moreLinks.length) {
     moreLinks.forEach((link) => {
@@ -451,50 +466,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to render media (image, video, or iframe)
   const renderMedia = (media) => {
-  if (!galleryMedia) return;
-  galleryMedia.innerHTML = "";
-  let mediaElement;
+    if (!galleryMedia) return;
+    galleryMedia.innerHTML = "";
+    let mediaElement;
 
-  if (media.type === "image") {
-    mediaElement = document.createElement("img");
-    mediaElement.src = media.src;
-    mediaElement.alt = media.alt;
-    mediaElement.setAttribute("aria-label", media.description);
-  } else if (media.type === "video") {
-    if (media.src.includes("youtube.com")) {
-      mediaElement = document.createElement("iframe");
-      mediaElement.src = media.src;
-      mediaElement.allow = "autoplay; encrypted-media";
-      mediaElement.allowFullscreen = true;
-      mediaElement.setAttribute("aria-label", media.description);
-    } else {
-      mediaElement = document.createElement("video");
+    if (media.type === "image") {
+      mediaElement = document.createElement("img");
       mediaElement.src = media.src;
       mediaElement.alt = media.alt;
-      mediaElement.controls = true;
-      mediaElement.autoplay = true; // Giữ autoplay nếu cần
-      // Xóa mediaElement.muted = true;
-      mediaElement.loop = true;
       mediaElement.setAttribute("aria-label", media.description);
+    } else if (media.type === "video") {
+      if (media.src.includes("youtube.com")) {
+        mediaElement = document.createElement("iframe");
+        mediaElement.src = media.src;
+        mediaElement.allow = "autoplay; encrypted-media";
+        mediaElement.allowFullscreen = true;
+        mediaElement.setAttribute("aria-label", media.description);
+      } else {
+        mediaElement = document.createElement("video");
+        mediaElement.src = media.src;
+        mediaElement.alt = media.alt;
+        mediaElement.controls = true;
+        mediaElement.autoplay = true; // Giữ autoplay nếu cần
+        // Xóa mediaElement.muted = true;
+        mediaElement.loop = true;
+        mediaElement.setAttribute("aria-label", media.description);
+      }
     }
-  }
 
-  if (mediaElement) {
-    mediaElement.addEventListener("error", () => {
-      galleryInfo.innerHTML = '<p>Error loading media.</p>';
-    });
-    galleryMedia.appendChild(mediaElement);
-  }
+    if (mediaElement) {
+      mediaElement.addEventListener("error", () => {
+        galleryInfo.innerHTML = "<p>Error loading media.</p>";
+      });
+      galleryMedia.appendChild(mediaElement);
+    }
 
-  if (galleryInfo) {
-    galleryInfo.innerHTML = `
+    if (galleryInfo) {
+      galleryInfo.innerHTML = `
       <h3 class="artwork-title">${media.title || "Untitled"}</h3>
       <p class="artwork-date">${media.date || ""}</p>
-      <div class="artwork-description"><p>${media.description || "No description available"}</p></div>
+      <div class="artwork-description"><p>${
+        media.description || "No description available"
+      }</p></div>
     `;
-  }
-  
-};
+    }
+  };
   // Pause any playing video
   const pauseCurrentVideo = () => {
     const currentVideo = galleryMedia?.querySelector("video");
@@ -503,7 +519,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const currentIframe = galleryMedia?.querySelector("iframe");
     if (currentIframe) {
-      currentIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      currentIframe.contentWindow.postMessage(
+        '{"event":"command","func":"pauseVideo","args":""}',
+        "*"
+      );
     }
   };
 
@@ -614,14 +633,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("header"),
       document.querySelector(".footer"),
       document.querySelector(".scroll-container"),
-      document.querySelector(".project-description")
+      document.querySelector(".project-description"),
     ].filter(Boolean);
 
     const savedTheme = localStorage.getItem("theme");
     if (
       savedTheme === "dark" ||
-      (!savedTheme &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       elementsToToggle.forEach((el) => el.classList.add("dark-mode"));
     }
@@ -724,7 +742,9 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleContactModal(true);
     });
 
-    closeContactModal.addEventListener("click", () => toggleContactModal(false));
+    closeContactModal.addEventListener("click", () =>
+      toggleContactModal(false)
+    );
     contactModal.addEventListener("click", (event) => {
       if (event.target === contactModal) {
         toggleContactModal(false);
