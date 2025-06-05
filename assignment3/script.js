@@ -43,12 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "vie-collection": [
       {
         type: "image",
-        src: "DSC05113.jpg",
-        alt: "PHU YEN",
-        description: "PHU YEN",
-      },
-      {
-        type: "image",
         src: "DSC09882.jpg",
         alt: "VIE",
         description: "VIE",
