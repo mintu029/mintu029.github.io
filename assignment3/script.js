@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "PHU YEN",
       },
     ],
-
+    // Collections data with external URLs
     "tu-collection": [
       {
         type: "image",
@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "PHU YEN",
       },
     ],
+    // Collections data with external URLs
     "artwork1-collection": [
       {
         type: "image",
@@ -140,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "THU AN",
       },
     ],
+    // Collections data with external URLs
     "artwork2-collection": [
       {
         type: "image",
@@ -178,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "BẮC",
       },
     ],
+    // Collections data with external URLs
     "artwork3-collection": [
       {
         type: "image",
@@ -210,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "RMIT CARNIVAL DAY",
       },
     ],
+    // Collections data with external URLs
     "artwork4-collection": [
       {
         type: "image",
@@ -236,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "THY KHUE",
       },
     ],
+    // Collections data with external URLs
     "artwork5-collection": [
       {
         type: "image",
@@ -280,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "PET MAGAZINE",
       },
     ],
+    // Collections data with external URLs
     "artwork6-collection": [
       {
         type: "video",
@@ -290,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Minh Tu is director of RMIT International Festival at RMIT Viet Nam",
       },
     ],
+    // Collections data with external URLs
     "artwork7-collection": [
       {
         type: "video",
@@ -300,6 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
           "Minh Tu is director of this music video which called 'LÁ THƯ'",
       },
     ],
+    // Collections data with external URLs
     "artwork8-collection": [
       {
         type: "video",
@@ -317,6 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "Behind The Scence",
       },
     ],
+    // Collections data with external URLs
     "phanthiet-collection": [
       {
         type: "video",
@@ -327,6 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
           " This is video recap a trip of RMiT International Club to Phan Thiet city",
       },
     ],
+    // Collections data with external URLs
     "artwork9-collection": [
       {
         type: "image",
@@ -377,6 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
         description: "TET",
       },
     ],
+    // Collections data with external URLs
     "artwork10-collection": [
       {
         type: "image",
@@ -417,6 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
   // Scroll-to-bottom functionality for "More" buttons
+
   const moreLinks = document.querySelectorAll(".more-link");
   if (moreLinks.length) {
     moreLinks.forEach((link) => {
@@ -426,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (scrollContainer) {
           scrollContainer.scrollIntoView({ behavior: "smooth" });
         }
-      });
+      }); // I wanna add a click event listener to each link that prevents default behavior and smoothly scrolls the page to the element with the class scroll-container.
     });
   }
 
@@ -439,10 +451,10 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-          }
+          } //I have used the IntersectionObserver to animate elements with the class animate-on-scroll when they become visible in the scroll-container.
         });
       },
-      { root: scrollContainer, threshold: 0.1 }
+      { root: scrollContainer, threshold: 0.1 } //When at least 10% (threshold: 0.1) of a card is visible, the class visible is added, likely triggering a CSS animation
     );
     cards.forEach((card) => observer.observe(card));
   }
@@ -465,24 +477,26 @@ document.addEventListener("DOMContentLoaded", () => {
     let mediaElement;
 
     if (media.type === "image") {
+      //Creates an <img> element with the source, alt text, and description.
       mediaElement = document.createElement("img");
       mediaElement.src = media.src;
       mediaElement.alt = media.alt;
       mediaElement.setAttribute("aria-label", media.description);
     } else if (media.type === "video") {
       if (media.src.includes("youtube.com")) {
+        //If the source is a YouTube URL, creates an <iframe> for embedding.
         mediaElement = document.createElement("iframe");
         mediaElement.src = media.src;
         mediaElement.allow = "autoplay; encrypted-media";
         mediaElement.allowFullscreen = true;
         mediaElement.setAttribute("aria-label", media.description);
-      } else {
+      } // Otherwise, creates a <video> element with controls, autoplay, and looping enabled.
+      else {
         mediaElement = document.createElement("video");
         mediaElement.src = media.src;
         mediaElement.alt = media.alt;
         mediaElement.controls = true;
-        mediaElement.autoplay = true; // Giữ autoplay nếu cần
-        // Xóa mediaElement.muted = true;
+        mediaElement.autoplay = true; // Keep autoplay
         mediaElement.loop = true;
         mediaElement.setAttribute("aria-label", media.description);
       }
@@ -491,11 +505,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mediaElement) {
       mediaElement.addEventListener("error", () => {
         galleryInfo.innerHTML = "<p>Error loading media.</p>";
-      });
+      }); //Handles errors by displaying an error message in galleryInfo
       galleryMedia.appendChild(mediaElement);
     }
 
     if (galleryInfo) {
+      //Updates galleryInfo with the media’s title, date, and description
       galleryInfo.innerHTML = `
       <h3 class="artwork-title">${media.title || "Untitled"}</h3>
       <p class="artwork-date">${media.date || ""}</p>
@@ -552,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Focus trapping for gallery modal
+  // Focus trapping for gallery modal, implements focus trapping within the gallery modal to improve accessibility
   if (galleryModal) {
     const focusableElements = galleryModal.querySelectorAll(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -618,6 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Theme toggle functionality
+  //All functionality is wrapped inside this event listener to prevent errors from accessing elements prematurely
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     const elementsToToggle = [
@@ -659,20 +675,20 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
-
+    //Manages an "About" modal that appears when the about-link is clicked
     const toggleAboutModal = (show) => {
       if (show) {
         aboutModal.classList.add("show");
         setTimeout(() => {
           aboutModalContent?.classList.add("show");
           firstElement?.focus();
-        }, 10);
+        }, 10); //Opening with a smooth transition
       } else {
         aboutModalContent?.classList.remove("show");
         setTimeout(() => {
           aboutModal.classList.remove("show");
           document.body.focus();
-        }, 500);
+        }, 500); //closing with a smooth transition
       }
     };
 
@@ -721,15 +737,15 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           contactModalContent?.classList.add("show");
           firstElement?.focus();
-        }, 10);
+        }, 10); //Smooth open transitions
       } else {
         contactModalContent?.classList.remove("show");
         setTimeout(() => {
           contactModal.classList.remove("show");
           document.body.focus();
-        }, 500);
+        }, 500); //Smooth close transitions
       }
-    };
+    }; //Focus trapping for accessibility
 
     contactLink.addEventListener("click", (event) => {
       event.preventDefault();
@@ -760,9 +776,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Enhanced particle animation
+
   const particleContainer = document.querySelector(".particle-container");
   if (particleContainer) {
-    for (let i = 0; i < 15; i++) {
+    for (
+      let i = 0;
+      i < 15;
+      i++ // Creates a decorative particle animation by adding 15 <div> elements to the particle-container
+    ) {
       const particle = document.createElement("div");
       const shapeType = Math.floor(Math.random() * 3);
       particle.classList.add("particle");
@@ -770,11 +791,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (shapeType === 0) particle.classList.add("circle");
       else if (shapeType === 1) particle.classList.add("star");
       else particle.classList.add("line");
-
+      // Each particle is randomly assigned one of three shapes
       particle.style.left = `${Math.random() * 100}vw`;
       particle.style.top = `${Math.random() * 100}vh`;
+      //Particles are positioned randomly across the viewport (top and left)
       particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
-      particle.style.animationDelay = `${Math.random() * 5}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`; //Randomizes animation duration (5–10 seconds) and delay (0–5 seconds) for a dynamic effect
       particleContainer.appendChild(particle);
     }
   }

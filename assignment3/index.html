@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Contains metadata and external resources -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minh Tu's Exhibition</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Minh Tu's Exhibition</title>     <!-- Sets the browser tab title, displayed in search results and bookmarks as name 'Minh Tu's Exhibition' -->
+    <link rel="stylesheet" href="style.css" />     <!-- Links my html file to external css file for styling -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
-    />
+    />     <!-- I have imported Poppins and Inter fonts from Google Fonts for my typography -->
   </head>
   <body>
-    <div class="background-blur"></div>
+    <!-- Contains all visible content and interactive elements -->
     <div class="particle-container"></div>
+    <!-- Container for animated particles like circle, stars, etc. It is populated by script.js -->
     <div class="content-wrapper">
+      <!-- I have created wraps main content for styling and z-index control -->
       <header>
+        <!-- Header will be included navigation and theme toggle -->
         <div class="header-title">MINH TU'S EXHIBITION</div>
+        <!-- My website title is MINH TU'S EXHIBITION-->
         <nav>
-          <a href="#artworks">Artworks</a>
+          <!-- Navigation links for user interaction -->
+          <a href="#artworks-section">Artworks</a>
+          <!-- Links to artworks section -->
           <a href="#" id="about-link">About</a>
+          <!-- I have put the About modal trigger via JavaScript -->
           <a href="#" id="contact-link">Contact</a>
+          <!-- I have put the Contact modal trigger via JavaScrip -->
         </nav>
         <button
           id="theme-toggle"
           aria-label="Toggle between light and dark theme"
         >
-          <span class="theme-icon"></span>
+          <!-- Button to switch between light and dark themes -->
+          <span class="theme-icon" aria-hidden="true"></span>
+          <!-- Placeholder for my theme icon  -->
+          <!-- I have added aria-hidden just for indicate decorative purpose -->
         </button>
       </header>
 
       <!-- About Modal -->
       <div id="about-modal" class="modal" role="dialog" aria-modal="true">
+        <!-- Modal dialog for About information, hidden by default -->
         <div class="modal-content">
+          <!-- Modal content with animation (styled in style.css) -->
           <span id="close-modal" class="close-button" aria-label="Close About Modal">×</span>
-          <h2>About Minh Tu</h2>
-          <p>
-            <div
-          class="artwork-card"
-          data-collection-id="minh-collection"
-        > <img 
+          <!-- Button to close the modal, accessible via aria-label -->
+          <h2>About Minh Tu</h2> <!-- Modal title is About Minh Tu -->
+          <div
+            class="artwork-card toggle-card"
+            data-collection-id="minh-profile"
+          >
+            <!-- Artwork card with my portrait -->
+            <!-- Added data-collection-id for gallery functionality, I have modified this data-collection in javascript-->
+            <img
               id="TU"
               src="DSC09914.jpg"
-              alt="Artwork reflecting modern chaos"
+              alt="Portrait of Minh Tu"
               class="artwork-image"
               loading="lazy"
-            /> </div>
-              <p>
+            />
+            <!-- Cover image of this artwork card, lazy-loaded for performance -->
+          </div>
+          <p>
             Le Minh Tu is a young artist from Viet Nam, and he is only 20 years old. He graduated from high school in the specialized IT class of Tien Giang High School for the Gifted. He graduated from Ho Chi Minh Conservatory with a major in Guitar. And is currently a final year student majoring in Digital Media at RMIT University. Because of the artistic influence from his family since childhood, he has had many experiences in his own creative process. He has strengths in photography, film, and music.
           </p>
           <p>
             For inquiries, collaborations, or to learn more about Minh Tu's
             creative process, feel free to reach out via the contact section.
           </p>
+          <!-- This the description, it talks about me =))) -->
         </div>
       </div>
 
       <!-- Contact Modal -->
       <div id="contact-modal" class="modal" role="dialog" aria-modal="true">
+        <!-- Modal dialog for Contact information, hidden by default -->
         <div class="modal-content">
           <span id="close-contact-modal" class="close-button" aria-label="Close Contact Modal">×</span>
+          <!-- Button to close the modal -->
           <h2>Contact Minh Tu</h2>
+          <!-- Modal title -->
           <p>
             For inquiries, collaborations, or to discuss Minh Tu's work, reach
             out via email or social media.
           </p>
           <p>
             Email:
-            <a href="https://www.leminhtu2016lv@gmail.com/" class="contact-link"
+            <a href="mailto:leminhtu2016lv@gmail.com" class="contact-link"
               >leminhtu2016lv@gmail.com</a
             ><br />
+            <!-- Provide my email, but I don't know how to copy my email profile and add it to this code -->
             Instagram:
             <a
               href="https://www.instagram.com/mintu029/"
@@ -76,49 +100,70 @@
               class="contact-link"
               >@minhtu029</a
             ><br />
+            <!-- My instagram link opens in new tab -->
             Phone:
-            <a
+            <a href="tel:+61422884063" class="contact-link"
               >+61 422 884 063</a
             >
+            <!-- my phone number -->
           </p>
         </div>
       </div>
 
       <!-- Gallery Modal -->
       <div id="gallery-modal" class="modal" role="dialog" aria-modal="true">
+        <!-- Modal dialog for displaying media, hidden by default -->
         <div class="modal-content gallery-modal-content">
+          <!-- Modal content with transparent background for gallery focus -->
           <span id="close-gallery-modal" class="close-button" aria-label="Close Gallery Modal">×</span>
+          <!-- Button to close the modal, but it's not work, I have tried to fix -->
           <div class="gallery-container">
+            <!-- Container for media and navigation -->
             <button id="gallery-prev" class="gallery-nav-button" aria-label="Previous Media">←</button>
+            <!-- Button to navigate to previous media -->
             <div class="gallery-image-wrapper">
+              <!-- Wrapper for media and info -->
               <div id="gallery-media"></div>
+              <!-- Placeholder for image, video, or iframe, populated on my javascript file -->
               <div id="gallery-info" class="gallery-info"></div>
+              <!-- Displays media details like title, date, description -->
             </div>
             <button id="gallery-next" class="gallery-nav-button" aria-label="Next Media">→</button>
+            <!-- Button to navigate to next media -->
+               <!-- These icon to create button, I've just copy from my phone icon -->
           </div>
         </div>
       </div>
 
-      <h1 class="section-title">ABOUT ARTWORKS</h1>
+      <h1 id="artworks-section" class="section-title">ABOUT ARTWORKS</h1>
+      <!-- Main section title with ID for navigation -->
+      <!-- Added id="artworks-section" to fix #artworks link -->
 
       <h2>SPECIAL</h2>
+      <!-- Subsection title for my special artworks -->
       <div class="artworks-grid">
+        <!-- CSS Grid container for my artwork cards -->
         <div
           class="artwork-card toggle-card"
           data-collection-id="minh-collection"
         >
+          <!-- Card for RMIT International Festival -->
           <img
             src="DSC09009.jpg"
-            alt="IFEST"
+            alt="RMIT International Festival"
             class="artwork-image"
             loading="lazy"
           />
+          <!-- Thumbnail image, lazy-loaded -->
+          <!-- Updated alt text for clarity -->
           <div class="artwork-info">
             <p class="artwork-date">12/10/2023</p>
+            <!-- Date of the artwork -->
             <h3 class="artwork-title">RMIT INTERNATIONAL FESTIVAL</h3>
+            <!-- Artwork title -->
             <div class="artwork-description">
               <p>
-                Minh Tu hosted for media of RMIT INTERNATIONAL FESTIVAL 2023"
+                Minh Tu hosted media for RMIT INTERNATIONAL FESTIVAL 2023.
               </p>
             </div>
           </div>
@@ -127,18 +172,21 @@
           class="artwork-card toggle-card"
           data-collection-id="vie-collection"
         >
+          <!-- Card for VIE portrait -->
           <img
             src="DSC09882.jpg"
-            alt="VIE"
+            alt="Portrait of Vy"
             class="artwork-image"
             loading="lazy"
           />
+          <!-- Updated alt text for clarity -->
           <div class="artwork-info">
-            <p class="artwork-date">12/05/2025</p>
+            <p class="artwork-date">12/05/2024</p>
             <h3 class="artwork-title">VIE</h3>
             <div class="artwork-description">
               <p>
-                This is Vy, one of my clients, this concept shows the technique of using lights when taking portrait photos.
+                This is Vy, one of my clients. This concept showcases the
+                technique of using lights in portrait photography.
               </p>
             </div>
           </div>
@@ -147,53 +195,70 @@
           class="artwork-card toggle-card"
           data-collection-id="ind-collection"
         >
+          <!-- Card for Independence Palace -->
           <img
             src="ind.png"
-            alt="INI"
+            alt="Independence Palace in Saigon"
             class="artwork-image"
             loading="lazy"
           />
+          <!-- Updated alt text for clarity -->
           <div class="artwork-info">
             <p class="artwork-date">08/01/2024</p>
             <h3 class="artwork-title">INDEPENDENCE PALACE</h3>
             <div class="artwork-description">
               <p>
-               Independence Palace is a famous place in Saigon. It used to be the presidential palace of the old regime. But today it is one of the places worth experiencing in Vietnam.
+                Independence Palace is a famous landmark in Saigon. It was once
+                the presidential palace of the old regime and is now a must-visit
+                site in Vietnam.
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="more-button">
-        <a href="#more" class="more-link">MORE</a>
+        <a href="#others-section" class="more-link">MORE</a>
+        <!-- Button to scroll to Others section -->
+        <!-- Fixed: Changed #more to #others-section -->
       </div>
 
       <div class="project-description">
+        <!-- Section describing the my exhibition -->
         <h2>Project Description</h2>
+        <!-- Section title is Project Description-->
         <p>
-          Minh Tu's exhibition is a collection of photography and video art. It is a synthesis of outstanding works by Minh Tu, a young artist, a student of RMIT university. You are experiencing interaction with Minh Tu's works, try to experience what I bring to you. Life photography, the normal pace of life in Vietnam, or angles in my videos. Enjoy them!
+          Minh Tu's exhibition is a collection of photography and video art,
+          showcasing outstanding works by a young artist and RMIT University
+          student. Interact with Minh Tu's creations, capturing the essence of
+          everyday life in Vietnam through photography and unique perspectives in
+          his videos. Enjoy the experience!
         </p>
       </div>
-
-      <h3>OTHERS</h3>
+      <h3 id="others-section">OTHERS</h3>
+      <!-- Subsection title for my additional artworks -->
+      <!-- Added id="others-section" to fix #more link -->
       <div class="scroll-container">
+        <!-- Scrollable container for more artwork cards -->
         <div class="artworks-grid">
+          <!-- Grid for additional artwork cards -->
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork1-collection"
           >
             <img
               src="20230915_194433000_iOS.jpg"
-              alt="AN"
+              alt="Portrait of Thu An"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">27/06/2023</p>
               <h3 class="artwork-title">THU AN</h3>
               <div class="artwork-description">
                 <p>
-                  Thu An wanted her concept to be dreamy in the countryside of My Tho. That's also where Minh Tu lives in Vietnam.
+                  Thu An wanted a dreamy concept set in the countryside of My Tho,
+                  Minh Tu's hometown in Vietnam.
                 </p>
               </div>
             </div>
@@ -204,17 +269,21 @@
           >
             <img
               src="20231012_131022000_iOS.jpg"
-              alt="HA GIANG"
+              alt="Hà Giang Landscape"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">30/10/2024</p>
               <h3 class="artwork-title">NHỚ BẮC (MISS THE NORTH)</h3>
               <div class="artwork-description">
                 <p>
-                  Miss the North is like a trip to Minh Tu's fairy tale land, he recorded every moment in the wild mountainous region in the far North of Vietnam. Everything is like in a fairy tale.
+                  Miss the North captures Minh Tu's journey through the wild
+                  mountainous region of northern Vietnam, evoking a fairy-tale
+                  atmosphere.
                 </p>
+                <!-- Rephrased for flow -->
               </div>
             </div>
           </div>
@@ -224,17 +293,20 @@
           >
             <img
               src="DSC01148.png"
-              alt="Nature-inspired artwork with earthy tones"
+              alt="RMIT Carnival Day"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">22/11/2024</p>
               <h3 class="artwork-title">RMIT CARNIVAL DAY</h3>
               <div class="artwork-description">
                 <p>
-                  Minh Tu is one of the members of RMIT media department for RMIT CARNIVAL DAY 2023. These are the images he captured of that day.
+                  Minh Tu, a member of RMIT's media department, captured these
+                  images during RMIT Carnival Day 2023.
                 </p>
+                <!-- Rephrased for clarity -->
               </div>
             </div>
           </div>
@@ -244,16 +316,17 @@
           >
             <img
               src="DSC03243-Recovered.jpg"
-              alt="Abstract artwork of human connection"
+              alt="Portrait of Thy Khue"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">11/08/2023</p>
               <h3 class="artwork-title">THY KHUE</h3>
               <div class="artwork-description">
                 <p>
-                  Thy Khue, a muse, photographed in the middle of an apricot forest in Sweden.
+                  Thy Khue, a muse, photographed in an apricot forest in Sweden.
                 </p>
               </div>
             </div>
@@ -264,16 +337,18 @@
           >
             <img
               src="PET MAGAZINE_page-0001.jpg"
-              alt="Minimalist artwork depicting solitude"
+              alt="Pet Magazine Cover"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">05/01/2024</p>
               <h3 class="artwork-title">PET MAGAZINE</h3>
               <div class="artwork-description">
                 <p>
-                  PET MAGAZINE is a collection of research and images that I and my team in Vietnam have done to help readers understand more about the PET friends around them.
+                  PET MAGAZINE features research and images by Minh Tu and his
+                  team to educate readers about pets.
                 </p>
               </div>
             </div>
@@ -284,19 +359,21 @@
           >
             <img
               src="tuuu.jpg"
-              alt="Artwork of cultural fusion with bold patterns"
+              alt="RMIT International Festival Recap"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">25/12/2023</p>
               <h3 class="artwork-title">IFEST VIDEO</h3>
               <div class="artwork-description">
                 <p>
-                 This is the recap video of RMIT INTERNATIONAL FESTIVAL 2023, Minh Tu edited it in 1 month to bring the most perfect product.
+                  A recap video of RMIT International Festival 2023, edited by
+                  Minh Tu over one month for a polished result.
                 </p>
               </div>
-              </div>
+            </div>
           </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
@@ -304,130 +381,147 @@
           >
             <img
               src="lathu.jpg"
-              alt="Artwork reflecting modern chaos"
+              alt="Lá Thư Music Video"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">02/09/2024</p>
               <h3 class="artwork-title">LÁ THƯ (THE LETTER)</h3>
               <div class="artwork-description">
                 <p>
-                  Minh TÚ is director of this music video which called 'LÁ THƯ'
+                  Minh Tu directed this music video titled 'Lá Thư'.
                 </p>
               </div>
-              </div>
             </div>
-            <div
+          </div>
+          <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="phanthiet-collection"
           >
             <img
               src="000038.jpg"
-              alt="Artwork reflecting modern chaos"
+              alt="Phan Thiet Trip Recap"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">22/05/2024</p>
-              <h3 class="artwork-title">Phan Thiet Trip</h3>
+              <h3 class="artwork-title">PHAN THIET TRIP</h3>
               <div class="artwork-description">
                 <p>
-                  This is video recap a trip of RMiT International Club to Phan Thiet city
+                  A video recap of RMIT International Club’s trip to Phan Thiet
+                  city.
                 </p>
               </div>
-              </div>
             </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork8-collection"
           >
             <img
               src="super.jpg"
-              alt="Tranquil artwork with soft gradients"
+              alt="Shipaholic Advertisement"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">02/01/2025</p>
               <h3 class="artwork-title">SHIPAHOLIC VIDEO</h3>
               <div class="artwork-description">
                 <p>
-                 Minh Tu is director of this video. He made it to create a advertising for new brand call 'SHIPAHOLIC'
+                  Minh Tu directed this advertising video for the new brand
+                  'Shipaholic'.
                 </p>
               </div>
-              </div>
-            </div>
-            <div
-          class="artwork-card toggle-card"
-          data-collection-id="tu-collection"
-        >
-          <img
-            src="DSC05113.jpg"
-            alt="PHU YEN"
-            class="artwork-image"
-            loading="lazy"
-          />
-          <div class="artwork-info">
-            <p class="artwork-date">15/07/2023</p>
-            <h3 class="artwork-title">PHU YEN</h3>
-            <div class="artwork-description">
-              <p>
-               The trip to Phu Yen with friends, it really made Tu remember forever. The feeling of carrying a 40kg camera backpack and climbing mountains and wading streams, it was truly a feeling that I will never forget.
-              </p>
             </div>
           </div>
-        </div>
+          <div
+            class="artwork-card toggle-card"
+            data-collection-id="tu-collection"
+          >
+            <img
+              src="DSC05113.jpg"
+              alt="Phu Yen Trip"
+              class="artwork-image"
+              loading="lazy"
+            />
+            <!-- Updated alt text -->
+            <div class="artwork-info">
+              <p class="artwork-date">15/07/2023</p>
+              <h3 class="artwork-title">PHU YEN</h3>
+              <div class="artwork-description">
+                <p>
+                  A memorable trip to Phu Yen with friends, captured by Minh Tu
+                  while carrying a 40kg camera backpack through mountains and
+                  streams.
+                </p>
+              </div>
+            </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork9-collection"
           >
             <img
               src="000032.jpg"
-              alt="Artwork exploring identity with vivid colors"
+              alt="Tet Holiday Moments"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">22/02/2025</p>
               <h3 class="artwork-title">TET HOLIDAY THROUGH FILM</h3>
               <div class="artwork-description">
                 <p>
-                 TET HOLIDAY is a traditional festival in Asian countries, and these are the moments Minh Tu captured before going to study abroad.
+                  Moments from Tet Holiday, a traditional Asian festival, captured
+                  by Minh Tu before studying abroad.
                 </p>
               </div>
-              </div>
             </div>
+          </div>
           <div
             class="artwork-card animate-on-scroll toggle-card"
             data-collection-id="artwork10-collection"
           >
             <img
               src="finaldonhen.jpg"
-              alt="Artwork meditating on time with subtle tones"
+              alt="Loneliness Artwork"
               class="artwork-image"
               loading="lazy"
             />
+            <!-- Updated alt text -->
             <div class="artwork-info">
               <p class="artwork-date">10/01/2025</p>
               <h3 class="artwork-title">LONELINESS</h3>
               <div class="artwork-description">
                 <p>
-                 Loneliness is very easy to come across in this life. But as a young artist, Minh Tu decided to create a work about the lonely artist. Taking advantage of 2D, 3D materials and combining them together. Next to that are sketches of his ideas.
+                  Minh Tu’s artwork explores loneliness, combining 2D and 3D
+                  materials with sketches of his ideas.
                 </p>
               </div>
-            </div>         
-         </div>
-       </div>
-     </div>
-   <div class="footer">
-        <div class="footer-art">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <!-- Footer section -->
+        <div class="footer-art" aria-hidden="true">
+          <!-- Container for decorative footer content -->
+          <!-- I've added aria-hidden just to indicate decorative purpose -->
           <h2 class="footer-title">
+            <!-- Stylized title with animated letters -->
             <span>M</span><span>I</span><span>N</span><span>H</span>
             <span class="spacer"></span>
             <span>T</span><span>U</span>
           </h2>
           <div class="footer-shapes">
+            <!-- Decorative animated shapes for footer -->
             <div class="shape shape-circle"></div>
             <div class="shape shape-line"></div>
             <div class="shape shape-circle"></div>
@@ -435,9 +529,12 @@
           <p class="footer-text">
             © 2025 Minh Tu's Exhibition. All rights reserved Minh Tu.
           </p>
+          <!-- Copyright notice -->
         </div>
-        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
+    <!-- Links to external JavaScript file for interactivity -->
   </body>
 </html>

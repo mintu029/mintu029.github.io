@@ -1,929 +1,1005 @@
+/* Fix body styles */
 body {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f1e9;
-  color: #2d2d2d;
-  overflow-x: hidden;
-  position: relative;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  font-family: "Inter", sans-serif; /* Default font for body text */
+  font-weight: 400; /* Normal font weight */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  background-color: #f8f1e9; /* Light theme background */
+  color: #2d2d2d; /* Light theme text color */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  position: relative; /* For positioning child elements */
+  transition: background-color 0.3s ease, color 0.3s ease; /*I made it for smooth theme transitions */
+  line-height: 1.6; /* Readable line spacing */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure body fills viewport height */
 }
 
+/* Dark mode body styles */
 body.dark-mode {
-  background-color: #1c2526;
-  color: #ededed;
+  background-color: #1c2526; /* Dark theme background */
+  color: #ededed; /* Dark theme text color */
 }
 
+/* Main content wrapper */
 .content-wrapper {
-  position: relative;
-  z-index: 1;
-  background: rgba(248, 241, 233, 0.2);
-  backdrop-filter: blur(5px);
-  padding-bottom: 20px;
-  transition: background 0.3s ease;
-  flex: 1 0 auto;
+  position: relative; /* For z-index control */
+  z-index: 1; /* Above particles */
+  background: rgba(248, 241, 233, 0.2); /* Light theme translucent background */
+  backdrop-filter: blur(5px); /* Blur effect for modern look */
+  padding-bottom: 20px; /* Bottom padding */
+  transition: background 0.3s ease; /* Smooth background transition */
+  flex: 1 0 auto; /* Grow to fill space, don’t shrink */
 }
 
+/* Dark mode content wrapper */
 .content-wrapper.dark-mode {
-  background: rgba(28, 37, 38, 0.7);
+  background: rgba(28, 37, 38, 0.7); /* Dark theme translucent background */
 }
 
+/* Container for animated particles */
 .particle-container {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: -1;
+  position: fixed; /* Fixed to cover entire viewport */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: -1; /* Behind content */
 }
-.TU {
- justify-content: center;
-}
+
+/* Base particle styles */
 .particle {
-  position: absolute;
-  opacity: 0.8;
-  animation: floatAndPulse 10s infinite linear, fadeInOut 3s infinite ease;
-  will-change: transform, opacity;
+  position: absolute; /* Positioned dynamically by JS */
+  opacity: 0.8; /* Slightly transparent */
+  animation: floatAndPulse 10s infinite linear, fadeInOut 3s infinite ease; /* Combined animations */
+  will-change: transform, opacity; /* Optimize performance */
 }
 
+/* Circle-shaped particle */
 .particle.circle {
-  width: 10px;
+  width: 10px; /* Small size */
   height: 10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #e8cda6 0%, #d68a7a 100%);
+  border-radius: 50%; /* Circular shape */
+  background: radial-gradient(circle, #e8cda6 0%, #d68a7a 100%); /* Light theme gradient */
 }
 
+/* Dark mode circle particle */
 body.dark-mode .particle.circle {
-  background: radial-gradient(circle, #e8cda6 0%, #8ab5a7 100%);
+  background: radial-gradient(circle, #e8cda6 0%, #8ab5a7 100%); /* Dark theme gradient */
 }
 
+/* Star-shaped particle */
 .particle.star {
-  width: 12px;
+  width: 12px; /* Slightly larger */
   height: 12px;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  background: radial-gradient(circle, #8ab5a7 0%, #e8cda6 100%);
+  clip-path: polygon(/* Star shape coordinates */); /* Creates star shape */
+  background: radial-gradient(circle, #8ab5a7 0%, #e8cda6 100%); /* Light theme gradient */
 }
 
+/* Dark mode star particle */
 body.dark-mode .particle.star {
-  background: radial-gradient(circle, #8ab5a7 0%, #d68a7a 100%);
+  background: radial-gradient(circle, #8ab5a7 0%, #d68a7a 100%); /* Dark theme gradient */
 }
 
+/* Line-shaped particle */
 .particle.line {
-  width: 15px;
+  width: 15px; /* Thin rectangle */
   height: 2px;
-  background: linear-gradient(45deg, #d68a7a 0%, #e8cda6 100%);
-  transform-origin: center;
-  animation: rotate 4s infinite linear;
+  background: linear-gradient(45deg, #d68a7a 0%, #e8cda6 100%); /* Light theme gradient */
+  transform-origin: center; /* Rotate around center */
+  animation: rotate 4s infinite linear; /* Rotation animation */
 }
 
+/* Dark mode line particle */
 body.dark-mode .particle.line {
-  background: linear-gradient(45deg, #d68a7a 0%, #8ab5a7 100%);
+  background: linear-gradient(45deg, #d68a7a 0%, #8ab5a7 100%); /* Dark theme gradient */
 }
 
+/* Particle float and scale animation */
 @keyframes floatAndPulse {
-  0% {
-    transform: translateY(100vh) scale(1);
-  }
-  50% {
-    transform: translateY(50vh) scale(1.2);
-  }
-  100% {
-    transform: translateY(-100vh) scale(1);
-  }
+  0% { transform: translateY(100vh) scale(1); } /* Start at bottom */
+  50% { transform: translateY(50vh) scale(1.2); } /* Middle, slightly larger */
+  100% { transform: translateY(-100vh) scale(1); } /* End at top */
 }
 
+/* Particle opacity animation */
 @keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.9;
-  }
+  0%, 100% { opacity: 0.3; } /* Faded */
+  50% { opacity: 0.9; } /* Bright */
 }
 
+/* Particle rotation animation */
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); } /* Start rotation */
+  100% { transform: rotate(360deg); } /* Full rotation */
 }
 
+/* Header styles */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: linear-gradient(45deg, #d68a7a, #8ab5a7);
-  color: #ededed;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  animation: headerGlow 4s infinite alternate;
-  transition: background 0.3s ease;
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space out children */
+  align-items: center; /* Vertically center */
+  padding: 20px 40px; /* Padding */
+  background: linear-gradient(45deg, #d68a7a, #8ab5a7); /* Light theme gradient */
+  color: #ededed; /* Text color */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow */
+  animation: headerGlow 4s infinite alternate; /* Glow animation */
+  transition: background 0.3s ease; /* Smooth background transition */
 }
 
+/* Dark mode header */
 header.dark-mode {
-  background: linear-gradient(45deg, #8ab5a7, #d68a7a);
+  background: linear-gradient(45deg, #8ab5a7, #d68a7a); /* Dark theme gradient */
 }
 
+/* Header glow animation */
 @keyframes headerGlow {
-  0% {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  100% {
-    box-shadow: 0 4px 15px rgba(138, 181, 167, 0.5);
-  }
+  0% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); } /* Subtle shadow */
+  100% { box-shadow: 0 4px 15px rgba(138, 181, 167, 0.5); } /* Brighter shadow */
 }
 
+/* Header title styles */
 .header-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-size: 26px; /* Large size */
+  font-weight: 700; /* Bold */
+  letter-spacing: 2px; /* Spaced letters */
+  text-transform: uppercase; /* All caps */
 }
 
+/* Theme toggle button */
 #theme-toggle {
-  background: none;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease;
-  display: flex;
+  background: none; /* No background */
+  border: none; /* No border */
+  padding: 10px; /* Padding */
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer; /* Hand cursor */
+  position: relative; /* For pseudo-elements */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  display: flex; /* Center icon */
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 40px; /* Fixed size */
   height: 40px;
-  margin-left: 20px;
+  margin-left: 20px; /* Space from nav */
 }
 
+/* Theme toggle icon */
 #theme-toggle .theme-icon::before {
-  content: "☀️";
-  font-size: 24px;
-  color: #e8cda6;
-  text-shadow: 0 0 10px rgba(232, 205, 166, 0.7);
-  transition: all 0.3s ease;
+  content: "☀️"; /* Sun emoji for light mode, I take this emoji from my phone emoji */
+  font-size: 24px; /* Large icon */
+  color: #e8cda6; /* Icon color */
+  text-shadow: 0 0 10px rgba(232, 205, 166, 0.7); /* Glow effect */
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
+/* Dark mode theme toggle icon */
 #theme-toggle.dark-mode .theme-icon::before {
-  content: "🌙";
-  color: #ededed;
-  text-shadow: 0 0 10px rgba(237, 237, 237, 0.7);
+  content: "🌙"; /* Moon emoji for dark mode, I take this emoji from my phone emoji */
+  color: #ededed; /* White color */
+  text-shadow: 0 0 10px rgba(237, 237, 237, 0.7); /* Glow effect */
 }
 
+/* Theme toggle hover effect */
 #theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
-  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1) rotate(15deg); /* Scale and rotate */
+  background: rgba(255, 255, 255, 0.1); /* Subtle background */
 }
 
+/* Dark mode theme toggle hover */
 #theme-toggle.dark-mode:hover {
-  background: rgba(237, 237, 237, 0.1);
+  background: rgba(237, 237, 237, 0.1); /* Dark theme hover background */
 }
 
+/* Theme toggle glow effect */
 #theme-toggle::after {
-  content: "";
-  position: absolute;
-  width: 100%;
+  content: ""; /* Empty pseudo-element */
+  position: absolute; /* Overlay button */
+  width: 100%; /* Full size */
   height: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(232, 205, 166, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  border-radius: 50%; /* Circular */
+  box-shadow: 0 0 15px rgba(232, 205, 166, 0.5); /* Glow */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth transition */
 }
 
+/* Dark mode theme toggle glow */
 #theme-toggle.dark-mode::after {
-  box-shadow: 0 0 15px rgba(237, 237, 237, 0.5);
+  box-shadow: 0 0 15px rgba(237, 237, 237, 0.5); /* Dark theme glow */
 }
 
+/* Show glow on hover */
 #theme-toggle:hover::after {
-  opacity: 1;
+  opacity: 1; /* Visible */
 }
 
+/* Navigation styles */
 nav {
-  display: flex;
-  gap: 20px;
+  display: flex; /* Horizontal layout */
+  gap: 20px; /* Space between links */
 }
 
+/* Navigation links */
 nav a {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  text-decoration: none;
-  color: #ededed;
-  font-size: 16px;
-  transition: color 0.3s ease;
-  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-weight: 500; /* Medium weight */
+  text-decoration: none; /* No underline */
+  color: #ededed; /* White text */
+  font-size: 16px; /* Readable size */
+  transition: color 0.3s ease; /* Smooth color change */
+  letter-spacing: 1px; /* Spaced letters */
 }
 
+/* Navigation link hover */
 nav a:hover {
-  color: #e8cda6;
+  color: #e8cda6; /* Gold color on hover */
 }
 
+/* Modal base styles */
 .modal {
-  display: none;
-  position: fixed;
+  display: none; /* Hidden by default */
+  position: fixed; /* Cover viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 100; /* Above content */
+  justify-content: center; /* Center content */
+  align-items: center; /* Center vertically */
+  backdrop-filter: blur(5px); /* Blur background */
 }
 
+/* Show modal */
 .modal.show {
-  display: flex;
+  display: flex; /* Visible */
 }
 
+/* Modal content */
 .modal-content {
-  background: rgba(248, 241, 233, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(138, 181, 167, 0.5);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(248, 241, 233, 0.8); /* Light theme translucent background */
+  backdrop-filter: blur(10px); /* Stronger blur */
+  padding: 30px; /* Padding */
+  border-radius: 20px; /* Rounded corners */
+  max-width: 600px; /* Max width */
+  width: 90%; /* Responsive width */
+  position: relative; /* For close button */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(138, 181, 167, 0.5); /* Shadows */
+  transform: translateY(50px); /* Start below */
+  opacity: 0; /* Hidden */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth animation */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
+/* Dark mode modal content */
 body.dark-mode .modal-content {
-  background: rgba(28, 37, 38, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(214, 138, 122, 0.3);
-  border-color: rgba(237, 237, 237, 0.2);
+  background: rgba(28, 37, 38, 0.3); /* Dark theme translucent background */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(214, 138, 122, 0.3); /* Dark shadows */
+  border-color: rgba(237, 237, 237, 0.2); /* Dark border */
 }
 
+/* Show modal content */
 .modal-content.show {
-  transform: translateY(0);
-  opacity: 1;
+  transform: translateY(0); /* Slide up */
+  opacity: 1; /* Visible */
 }
 
+/* Modal title */
 .modal-content h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 32px;
-  font-weight: 600;
-  color: #d68a7a;
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-size: 32px; /* Large size */
+  font-weight: 600; /* Bold */
+  color: #d68a7a; /* Light theme color */
+  margin-bottom: 20px; /* Space below */
+  text-align: center; /* Centered */
+  text-transform: uppercase; /* All caps */
+  letter-spacing: 2px; /* Spaced letters */
+  position: relative; /* For underline */
 }
 
+/* Modal title underline */
 .modal-content h2::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background: #d68a7a;
-  transition: background 0.3s ease;
+  content: ""; /* Empty pseudo-element */
+  position: absolute; /* Below title */
+  bottom: -5px; /* Position */
+  left: 50%; /* Centered */
+  transform: translateX(-50%); /* Offset */
+  width: 50px; /* Width */
+  height: 2px; /* Height */
+  background: #d68a7a; /* Light theme color */
+  transition: background 0.3s ease; /* Smooth transition */
 }
 
+/* Dark mode modal title */
 body.dark-mode .modal-content h2 {
-  color: #8ab5a7;
+  color: #8ab5a7; /* Dark theme color */
 }
 
+/* Dark mode modal title underline */
 body.dark-mode .modal-content h2::after {
-  background: #8ab5a7;
+  background: #8ab5a7; /* Dark theme color */
 }
 
+/* Modal paragraph */
 .modal-content p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #2d2d2d;
-  margin: 15px 0;
-  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 300; /* Thin weight */
+  font-size: 16px; /* Readable size */
+  line-height: 1.8; /* Spacious lines */
+  color: #2d2d2d; /* Light theme text */
+  margin: 15px 0; /* Spacing */
+  transition: color 0.3s ease; /* Smooth color change */
 }
 
+/* Dark mode modal paragraph */
 body.dark-mode .modal-content p {
-  color: #ededed;
+  color: #ededed; /* Dark theme text */
 }
 
+/* Contact links */
 .contact-link {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  color: #d68a7a;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 400; /* Normal weight */
+  color: #d68a7a; /* Light theme color */
+  text-decoration: none; /* No underline */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions */
 }
 
+/* Dark mode contact links */
 body.dark-mode .contact-link {
-  color: #8ab5a7;
+  color: #8ab5a7; /* Dark theme color */
 }
 
+/* Contact link hover */
 .contact-link:hover {
-  color: #e8cda6;
-  text-shadow: 0 0 5px rgba(232, 205, 166, 0.5);
+  color: #e8cda6; /* Gold color */
+  text-shadow: 0 0 5px rgba(232, 205, 166, 0.5); /* Glow effect */
 }
 
+/* Dark mode contact link hover */
 body.dark-mode .contact-link:hover {
-  color: #e8cda6;
-  text-shadow: 0 0 5px rgba(232, 205, 166, 0.5);
+  color: #e8cda6; /* Same gold color */
+  text-shadow: 0 0 5px rgba(232, 205, 166, 0.5); /* Same glow */
 }
 
+/* Close button */
 .close-button {
-  font-family: "Poppins", sans-serif;
-  position: absolute;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  position: absolute; /* Top-right corner */
   top: 15px;
   right: 20px;
-  font-size: 28px;
-  font-weight: 400;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  padding: 5px;
+  font-size: 28px; /* Large size */
+  font-weight: 400; /* Normal weight */
+  color: #666; /* Light theme color */
+  cursor: pointer; /* Hand cursor */
+  transition: all 0.3s ease; /* Smooth transitions */
+  border-radius: 50%; /* Circular */
+  padding: 5px; /* Padding */
 }
 
+/* Dark mode close button */
 body.dark-mode .close-button {
-  color: #999;
+  color: #999; /* Dark theme color */
 }
 
+/* Close button hover */
 .close-button:hover {
-  color: #d68a7a;
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.2);
+  color: #d68a7a; /* Light theme color */
+  background: rgba(255, 255, 255, 0.2); /* Subtle background */
+  transform: scale(1.2); /* Scale up */
 }
 
+/* Dark mode close button hover */
 body.dark-mode .close-button:hover {
-  color: #8ab5a7;
-  background: rgba(237, 237, 237, 0.2);
+  color: #8ab5a7; /* Dark theme color */
+  background: rgba(237, 237, 237, 0.2); /* Dark background */
 }
 
+/* Heading styles */
 h2,
 h3 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  margin: 40px 0;
-  color: #d68a7a;
-  text-shadow: 1px 1px 5px rgba(214, 138, 122, 0.3);
-  transition: color 0.3s ease;
-  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-weight: 600; /* Bold */
+  text-align: center; /* Centered */
+  margin: 40px 0; /* Spacing */
+  color: #d68a7a; /* Light theme color */
+  text-shadow: 1px 1px 5px rgba(214, 138, 122, 0.3); /* Subtle shadow */
+  transition: color 0.3s ease; /* Smooth color change */
+  letter-spacing: 1.5px; /* Spaced letters */
 }
 
+/* Specific h2 styles */
 h2 {
-  font-size: 30px;
+  font-size: 30px; 
 }
 
+/* Specific h3 styles */
 h3 {
-  font-size: 24px;
+  font-size: 24px; /* Smaller size */
 }
 
+/* Dark mode headings */
 body.dark-mode h2,
 body.dark-mode h3 {
-  color: #8ab5a7;
-  text-shadow: 1px 1px 5px rgba(138, 181, 167, 0.5);
+  color: #8ab5a7; /* Dark theme color */
+  text-shadow: 1px 1px 5px rgba(138, 181, 167, 0.5); /* Dark shadow */
 }
 
+/* Section title */
 .section-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 38px;
-  font-weight: 700;
-  text-align: center;
-  margin: 40px 0;
-  color: #d68a7a;
-  text-shadow: 1px 1px 5px rgba(214, 138, 122, 0.3);
-  transition: color 0.3s ease;
-  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-size: 38px; /* Large size */
+  font-weight: 700; /* Extra bold */
+  text-align: center; /* Centered */
+  margin: 40px 0; /* Spacing */
+  color: #d68a7a; /* Light theme color */
+  text-shadow: 1px 1px 5px rgba(214, 138, 122, 0.3); /* Shadow */
+  transition: color 0.3s ease; /* Smooth color change */
+  letter-spacing: 2px; /* Spaced letters */
 }
 
+/* Dark mode section title */
 body.dark-mode .section-title {
-  color: #8ab5a7;
-  text-shadow: 1px 1px 5px rgba(138, 181, 167, 0.5);
+  color: #8ab5a7; /* Dark theme color */
+  text-shadow: 1px 1px 5px rgba(138, 181, 167, 0.5); /* Dark shadow */
 }
 
+/* Toggle card for interactivity */
 .toggle-card {
-  cursor: pointer;
+  cursor: pointer; /* Hand cursor */
 }
 
+/* Artwork grid layout */
 .artworks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 40px;
-  padding: 0 40px;
-  max-width: 1280px;
-  margin: 0 auto;
+  display: grid; /* CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive columns */
+  gap: 40px; /* Space between cards */
+  padding: 0 40px; /* Side padding */
+  max-width: 1280px; /* Max width */
+  margin: 0 auto; /* Centered */
 }
 
+/* Artwork card */
 .artwork-card {
-  text-align: center;
-  perspective: 1000px;
+  text-align: center; /* Centered content */
+  perspective: 1000px; /* 3D effect for transforms */
 }
 
+/* Artwork image */
 .artwork-image {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  transform-style: preserve-3d;
+  width: 400px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Crop image to fit */
+  border-radius: 20px; /* Rounded corners */
+  position: relative; /* For hover effects */
+  overflow: hidden; /* Hide overflow */
+  transition: all 0.3s ease; /* Smooth transitions */
+  transform-style: preserve-3d; /* Enable 3D transforms */
 }
 
+/* Blur all images on grid hover */
 .artworks-grid:hover .artwork-image {
-  filter: blur(5px);
+  filter: blur(5px); /* Apply blur */
 }
 
+/* Remove blur and add effects on individual image hover */
 .artworks-grid .artwork-image:hover {
-  filter: none;
-  box-shadow: 0 0 20px rgba(214, 138, 122, 0.7);
-  transform: scale(1.1);
+  filter: none; /* Remove blur */
+  box-shadow: 0 0 20px rgba(214, 138, 122, 0.7); /* Light theme glow */
+  transform: scale(1.1); /* Scale up */
 }
 
+/* Dark mode image hover */
 body.dark-mode .artworks-grid .artwork-image:hover {
-  box-shadow: 0 0 20px rgba(138, 181, 167, 0.7);
+  box-shadow: 0 0 20px rgba(138, 181, 167, 0.7); /* Dark theme glow */
 }
 
+/* Artwork info container */
 .artwork-info {
-  margin-top: 10px;
+  margin-top: 10px; /* Space above */
 }
 
+/* Artwork title */
 .artwork-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-  color: #e8cda6;
-  margin: 0;
-  transition: color 0.3s ease;
-  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-size: 50px; /* Large size */
+  font-weight: 700; /* Extra bold */
+  color: #e8cda6; /* Gold color */
+  margin: 0; /* No margin */
+  transition: color 0.3s ease; /* Smooth color change */
+  letter-spacing: 1px; /* Spaced letters */
 }
 
+/* Dark mode artwork title */
 body.dark-mode .artwork-title {
-  color: #e8cda6;
+  color: #e8cda6; /* Same gold color */
 }
 
+/* Artwork date */
 .artwork-date {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 5px 0;
-  color: #000000;
-  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 400; /* Normal weight */
+  font-size: 16px; /* Readable size */
+  margin: 5px 0; /* Spacing */
+  color: #000000; /* Black in light mode */
+  transition: color 0.3s ease; /* Smooth color change */
 }
 
+/* Dark mode artwork date */
 body.dark-mode .artwork-date {
-  color: #ffffff;
+  color: #ffffff; /* White in dark mode */
 }
 
+/* Artwork description */
 .artwork-description {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  margin-top: 10px;
+  max-height: 0; /* Hidden by default */
+  overflow: hidden; /* Hide overflow */
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+  opacity: 0; /* Transparent */
+  margin-top: 10px; /* Space above */
 }
 
+/* Show artwork description */
 .artwork-description.show {
-  max-height: 200px;
-  opacity: 1;
+  max-height: 200px; /* Max height when visible */
+  opacity: 1; /* Fully visible */
 }
 
+/* Description paragraph */
 .artwork-description p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: #2d2d2d;
-  line-height: 1.5;
-  margin: 0;
-  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 300; /* Thin weight */
+  font-size: 14px; /* Small size */
+  color: #2d2d2d; /* Light theme text */
+  line-height: 1.5; /* Readable spacing */
+  margin: 0; /* No margin */
+  transition: color 0.3s ease; /* Smooth color change */
 }
 
+/* Dark mode description paragraph */
 body.dark-mode .artwork-description p {
-  color: #ededed;
+  color: #ededed; /* Dark theme text */
 }
 
+/* Project description section */
 .project-description {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 20px;
-  background: rgba(232, 205, 166, 0.1);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px; /* Max width */
+  margin: 0 auto 40px; /* Centered with bottom margin */
+  padding: 20px; /* Padding */
+  background: rgba(232, 205, 166, 0.1); /* Light theme background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
+/* Dark mode project description */
 body.dark-mode .project-description {
-  background: rgba(138, 181, 167, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(138, 181, 167, 0.1); /* Dark theme background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
 }
 
+/* Project description title */
 .project-description h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 28px;
-  font-weight: 600;
-  color: #d68a7a;
-  text-align: center;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-size: 28px; /* Large size */
+  font-weight: 600; /* Bold */
+  color: #d68a7a; /* Light theme color */
+  text-align: center; /* Centered */
+  margin-bottom: 15px; /* Space below */
+  transition: color 0.3s ease; /* Smooth color change */
+  letter-spacing: 1.5px; /* Spaced letters */
 }
 
+/* Dark mode project description title */
 body.dark-mode .project-description h2 {
-  color: #8ab5a7;
+  color: #8ab5a7; /* Dark theme color */
 }
 
+/* Project description paragraph */
 .project-description p {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #2d2d2d;
-  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 300; /* Thin weight */
+  font-size: 16px; /* Readable size */
+  line-height: 1.6; /* Spacious lines */
+  color: #2d2d2d; /* Light theme text */
+  transition: color 0.3s ease; /* Smooth color change */
 }
 
+/* Dark mode project description paragraph */
 body.dark-mode .project-description p {
-  color: #ededed;
+  color: #ededed; /* Dark theme text */
 }
 
+/* More button container */
 .more-button {
-  display: flex;
+  display: flex; /* Center content */
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 10px; /* Space above */
 }
 
+/* More button link */
 .more-button a {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  text-decoration: none;
-  color: #d68a7a;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 15px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  font-weight: 500; /* Medium weight */
+  text-decoration: none; /* No underline */
+  color: #d68a7a; /* Light theme color */
+  font-size: 16px; /* Readable size */
+  display: flex; /* Align icon */
+  align-items: center; /* Center vertically */
+  gap: 5px; /* Space between text and icon */
+  padding: 5px 15px; /* Padding */
+  border-radius: 20px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.2); /* Light theme background */
+  transition: all 0.3s ease; /* Smooth transitions */
+  letter-spacing: 1px; /* Spaced letters */
+  margin-bottom: 20px; /* Space below */
 }
 
+/* Dark mode more button */
 body.dark-mode .more-button a {
-  color: #8ab5a7;
-  background: rgba(237, 237, 237, 0.2);
+  color: #8ab5a7; /* Dark theme color */
+  background: rgba(237, 237, 237, 0.2); /* Dark theme background */
 }
 
+/* More button arrow */
 .more-button a::after {
-  content: "↓";
-  font-size: 20px;
+  content: "↓"; /* Down arrow */
+  font-size: 20px; /* Larger size */
 }
 
+/* More button hover */
 .more-button a:hover {
-  background: rgba(232, 205, 166, 0.5);
-  transform: translateY(-2px);
+  background: rgba(232, 205, 166, 0.5); /* Gold background */
+  transform: translateY(-2px); /* Lift up */
 }
 
+/* Dark mode more button hover */
 body.dark-mode .more-button a:hover {
-  background: rgba(232, 205, 166, 0.5);
+  background: rgba(232, 205, 166, 0.5); /* Same gold background */
 }
 
+/* Footer styles */
 .footer {
-  background-color: #d68a7a;
-  color: #ededed;
-  padding: 60px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #d68a7a, #8ab5a7);
-  transition: background 0.3s ease;
-  flex-shrink: 0;
+  background-color: #d68a7a; /* Fallback color */
+  color: #ededed; /* White text */
+  padding: 60px 20px; /* Padding */
+  text-align: center; /* Centered */
+  background: linear-gradient(135deg, #d68a7a, #8ab5a7); /* Light theme gradient */
+  transition: background 0.3s ease; /* Smooth transition */
+  flex-shrink: 0; /* Don’t shrink */
 }
 
+/* Dark mode footer */
 .footer.dark-mode {
-  background: linear-gradient(135deg, #8ab5a7, #d68a7a);
+  background: linear-gradient(135deg, #8ab5a7, #d68a7a); /* Dark theme gradient */
 }
 
+/* Footer art container */
 .footer-art {
-  position: relative;
+  position: relative; /* For positioning */
 }
 
+/* Footer title */
 .footer-title {
-  margin: 0;
-  font-size: 0;
+  margin: 0; /* No margin */
+  font-size: 0; /* Hide default text */
 }
 
+/* Footer title letters */
 .footer-title span {
-  font-family: "Poppins", sans-serif;
-  display: inline-block;
-  font-size: 64px;
-  font-weight: 700;
-  color: #ededed;
-  opacity: 0.2;
-  transition: all 0.3s ease;
-  letter-spacing: 2px;
+  font-family: "Poppins", sans-serif; /* Bold font */
+  display: inline-block; /* Inline block for animation */
+  font-size: 64px; /* Large size */
+  font-weight: 700; /* Extra bold */
+  color: #ededed; /* White color */
+  opacity: 0.2; /* Faded */
+  transition: all 0.3s ease; /* Smooth transitions */
+  letter-spacing: 2px; /* Spaced letters */
 }
 
+/* Footer title letter hover */
 .footer-title span:hover {
-  opacity: 1;
-  transform: translateY(-10px);
-  color: #e8cda6;
+  opacity: 1; /* Fully visible */
+  transform: translateY(-10px); /* Lift up */
+  color: #e8cda6; /* Gold color */
 }
 
+/* Footer title spacer */
 .footer-title .spacer {
-  width: 20px;
-  display: inline-block;
+  width: 20px; /* Space between name parts */
+  display: inline-block; /* Inline block */
 }
 
+/* Footer shapes container */
 .footer-shapes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
+  display: flex; /* Horizontal layout */
+  justify-content: center; /* Centered */
+  align-items: center; /* Vertically centered */
+  gap: 10px; /* Space between shapes */
+  margin: 20px 0; /* Spacing */
 }
 
+/* Base shape styles */
 .shape {
-  background-color: #ededed;
-  opacity: 0.5;
-  animation: float 3s infinite ease-in-out;
+  background-color: #ededed; /* White color */
+  opacity: 0.5; /* Faded */
+  animation: float 3s infinite ease-in-out; /* Float animation */
 }
 
+/* Circle shape */
 .shape-circle {
-  width: 15px;
+  width: 15px; /* Small size */
   height: 15px;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
+  border-radius: 50%; /* Circular */
+  animation: pulse 2s infinite; /* Pulse animation */
 }
 
+/* Line shape */
 .shape-line {
-  width: 100px;
-  height: 2px;
-  position: relative;
+  width: 100px; /* Long rectangle */
+  height: 2px; /* Thin */
+  position: relative; /* For pseudo-elements */
 }
 
+/* Line shape dots */
 .shape-line::before,
 .shape-line::after {
-  content: "";
-  position: absolute;
-  width: 10px;
+  content: ""; /* Empty pseudo-elements */
+  position: absolute; /* Positioned */
+  width: 10px; /* Small size */
   height: 10px;
-  background-color: #ededed;
-  border-radius: 50%;
-  top: -4px;
+  background-color: #ededed; /* White color */
+  border-radius: 50%; /* Circular */
+  top: -4px; /* Offset */
 }
 
+/* Left dot */
 .shape-line::before {
-  left: 0;
+  left: 0; /* Left side */
 }
 
+/* Right dot */
 .shape-line::after {
-  right: 0;
+  right: 0; /* Right side */
 }
 
+/* Footer text */
 .footer-text {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  margin: 10px 0 0;
-  opacity: 0.7;
+  font-family: "Inter", sans-serif; /* Light font */
+  font-weight: 300; /* Thin weight */
+  font-size: 12px; /* Small size */
+  margin: 10px 0 0; /* Spacing */
+  opacity: 0.7; /* Faded */
 }
 
+/* Pulse animation for shapes */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
+  0% { transform: scale(1); opacity: 0.5; } /* Normal size */
+  50% { transform: scale(1.5); opacity: 1; } /* Larger and bright */
+  100% { transform: scale(1); opacity: 0.5; } /* Back to normal */
 }
 
+/* Float animation for shapes */
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); } /* Stationary */
+  50% { transform: translateY(-10px); } /* Move up */
 }
 
+/* Scrollable container */
 .scroll-container {
-  width: 90%;
-  max-width: 1280px;
-  height: 700px;
-  overflow-y: auto;
-  margin: 20px auto;
-  padding: 40px;
-  background-image: linear-gradient(147deg, #d68a7a 0%, #8ab5a7 74%);
-  border-radius: 50px;
-  box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  scroll-behavior: smooth;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  width: 90%; /* Responsive width */
+  max-width: 1280px; /* Max width */
+  height: 700px; /* Fixed height */
+  overflow-y: auto; /* Vertical scrollbar */
+  margin: 20px auto; /* Centered */
+  padding: 40px; /* Padding */
+  background-image: linear-gradient(147deg, #d68a7a 0%, #8ab5a7 74%); /* Light theme gradient */
+  border-radius: 50px; /* Rounded corners */
+  box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.3); /* Shadow */
+  display: flex; /* Flex layout */
+  justify-content: center; /* Center content */
+  align-items: flex-start; /* Align top */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
+/* Dark mode scroll container */
 body.dark-mode .scroll-container {
-  background-image: linear-gradient(147deg, #8ab5a7 0%, #d68a7a 74%);
-  box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(147deg, #8ab5a7 0%, #d68a7a 74%); /* Dark theme gradient */
+  box-shadow: 0px 7px 46px 0px rgba(0, 0, 0, 0.5); /* Darker shadow */
 }
 
+/* Scroll animation for cards */
 .animate-on-scroll {
-  opacity: 0;
-  transform: scale(0.9) translateY(20px);
-  transition: all 0.5s ease;
+  opacity: 0; /* Hidden */
+  transform: scale(0.9) translateY(20px); /* Scaled down and offset */
+  transition: all 0.5s ease; /* Smooth transition */
 }
 
+/* Visible state for scroll animation */
 .animate-on-scroll.visible {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  opacity: 1; /* Visible */
+  transform: scale(1) translateY(0); /* Normal size and position */
 }
 
+/* Gallery modal content */
 .gallery-modal-content {
-  background: transparent;
-  padding: 0;
-  max-width: 95vw;
-  max-height: 90vh;
-  border: none;
-  box-shadow: none;
+  background: transparent; /* No background */
+  padding: 0; /* No padding */
+  max-width: 95vw; /* Almost full width */
+  max-height: 90vh; /* Almost full height */
+  border: none; /* No border */
+  box-shadow: none; /* No shadow */
 }
 
+/* Gallery container */
 .gallery-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  position: relative; /* For navigation buttons */
 }
 
+/* Gallery image wrapper */
 .gallery-image-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: flex; /* Vertical layout */
+  flex-direction: column; /* Stack children */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text */
 }
 
+/* Gallery media styles */
 #gallery-media img,
 #gallery-media video,
 #gallery-media iframe {
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  max-height: 70vh;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  width: 100%; /* Full width */
+  max-width: 800px; /* Max width */
+  aspect-ratio: 4 / 3; /* Fixed aspect ratio */
+  object-fit: contain; /* Fit without cropping */
+  max-height: 70vh; /* Max height */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Shadow */
+  transition: transform 0.3s ease; /* Smooth transform */
 }
 
+/* Specific iframe height */
 #gallery-media iframe {
-  height: 450px;
+  height: 450px; /* Fixed height */
 }
 
+/* Video height */
 #gallery-media video {
-  height: auto;
+  height: auto; /* Auto height */
 }
 
+/* Gallery info */
 .gallery-info {
-  margin-top: 15px;
-  color: #ededed;
-  text-align: center;
-  max-width: 600px;
+  margin-top: 15px; /* Space above */
+  color: #ededed; /* White text */
+  text-align: center; /* Centered */
+  max-width: 600px; /* Max width */
 }
 
+/* Gallery title */
 .gallery-info .artwork-title {
-  font-size: 28px;
-  margin-bottom: 5px;
+  font-size: 28px; /* Smaller than card title */
+  margin-bottom: 5px; /* Space below */
 }
 
+/* Gallery date */
 .gallery-info .artwork-date {
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 14px; /* Small size */
+  margin-bottom: 10px; /* Space below */
 }
 
+/* Gallery description */
 .gallery-info .artwork-description p {
-  font-size: 16px;
-  margin: 0;
+  font-size: 16px; /* Readable size */
+  margin: 0; /* No margin */
 }
 
+/* Gallery navigation buttons */
 .gallery-nav-button {
-  background: rgba(214, 138, 122, 0.7);
-  color: #ededed;
-  border: none;
-  padding: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  transition: background 0.3s ease, transform 0.3s ease;
+  background: rgba(214, 138, 122, 0.7); /* Light theme translucent background */
+  color: #ededed; /* White text */
+  border: none; /* No border */
+  padding: 15px; /* Padding */
+  font-size: 24px; /* Large arrows */
+  cursor: pointer; /* Hand cursor */
+  position: absolute; /* Positioned */
+  top: 50%; /* Vertically centered */
+  transform: translateY(-50%); /* Offset */
+  border-radius: 50%; /* Circular */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
+/* Dark mode gallery navigation buttons */
 body.dark-mode .gallery-nav-button {
-  background: rgba(138, 181, 167, 0.7);
+  background: rgba(138, 181, 167, 0.7); /* Dark theme background */
 }
 
+/* Gallery navigation button hover */
 .gallery-nav-button:hover {
-  background: rgba(232, 205, 166, 0.9);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(232, 205, 166, 0.9); /* Gold background */
+  transform: translateY(-50%) scale(1.1); /* Scale up */
 }
 
+/* Previous button position */
 #gallery-prev {
-  left: 20px;
+  left: 20px; /* Left side */
 }
 
+/* Next button position */
 #gallery-next {
-  right: 20px;
+  right: 20px; /* Right side */
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .artworks-grid {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
+    grid-template-columns: 1fr; /* Single column */
+    padding: 0 20px; /* Reduced padding */
   }
 
   .artwork-image {
-    width: 100%;
-    max-width: 400px;
-    height: 300px;
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width */
+    height: 300px; /* Fixed height */
   }
 
   .scroll-container {
-    width: 95%;
-    padding: 20px;
+    width: 95%; /* Slightly wider */
+    padding: 20px; /* Reduced padding */
   }
 
   .header-title {
-    font-size: 20px;
+    font-size: 20px; /* Smaller size */
   }
 
   nav {
-    gap: 10px;
+    gap: 10px; /* Tighter spacing */
   }
 
   nav a {
-    font-size: 14px;
+    font-size: 14px; /* Smaller size */
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: 28px; /* Smaller size */
   }
 
   .artwork-title {
-    font-size: 40px;
+    font-size: 40px; /* Smaller size */
   }
 
   .modal-content {
-    width: 85%;
-    padding: 20px;
+    width: 85%; /* Slightly smaller */
+    padding: 20px; /* Reduced padding */
   }
 
   .gallery-modal-content {
-    max-width: 95vw;
+    max-width: 95vw; /* Full width */
   }
 
   #gallery-media img,
   #gallery-media video,
   #gallery-media iframe {
-    max-width: 90vw;
-    max-height: 60vh;
-    aspect-ratio: 4 / 3;
+    max-width: 90vw; /* Slightly smaller */
+    max-height: 60vh; /* Shorter height */
+    aspect-ratio: 4 / 3; /* Maintain aspect ratio */
   }
 
   .gallery-nav-button {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 18px; /* Smaller arrows */
+    padding: 10px; /* Reduced padding */
   }
 }
 
+/* System dark mode preference */
 @media (prefers-color-scheme: dark) {
+  /* Apply dark mode styles when system prefers dark theme */
   body {
     background-color: #1c2526;
     color: #ededed;
@@ -1011,5 +1087,4 @@ body.dark-mode .gallery-nav-button {
     color: #e8cda6;
     text-shadow: 0 0 5px rgba(232, 205, 166, 0.5);
   }
-}
-
+};
